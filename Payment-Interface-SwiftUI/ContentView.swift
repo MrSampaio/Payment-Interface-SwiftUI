@@ -1,25 +1,17 @@
-//
-//  ContentView.swift
-//  Payment-Interface-SwiftUI
-//
-//  Created by JULIO SAMPAIO on 01/04/26.
-//
 
-import SwiftUI
+        NavigationStack {
+            VStack(spacing: 20) {
+                Text("Meu App")
+                    .font(.largeTitle).bold()
 
-struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-                
-            Text("Hello, world!")
-        }
-        .padding()
-    }
-}
+                // Botão que leva para a tela de Login
+                NavigationLink(destination: LoginView()) {
+                    Text("Ir para Login")
+                }
 
-#Preview {
-    ContentView()
-}
+                // Botão que leva para a tela de Cadastro
+                NavigationLink(destination: SingupView()) {
+                    Text("Criar Conta")
+                    
+                }
+            }
