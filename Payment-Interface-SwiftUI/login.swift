@@ -42,7 +42,7 @@ struct LoginView: View {
                         .foregroundColor(.white)
                         .overlay(
                                 RoundedRectangle(cornerRadius: 15)
-                                    .stroke(Color(.verdeClaro))
+                                    .stroke(Color(.verdeClaro)) // Certifique-se de que essa cor existe no seus Assets!
                         )
 
                         
@@ -78,21 +78,21 @@ struct LoginView: View {
                 
                 VStack{
                     Button {
-                        
+                      
                     } label: {
                         Image("digital")
                             .resizable()
                             .scaledToFit()
-                            .frame(width: .infinity, height: 50)
+                            .frame(maxWidth: .infinity, maxHeight: 50)
                             .padding(20)
                     }
                     
                 }
                 .frame(width: 96, height: 96)
-                .background(.verdeEscuro)
+                .background(.verdeEscuro) 
                 .cornerRadius(50)
                 
-                Spacer();
+                Spacer()
                 
                 HStack{
                     Text("Ainda não possui conta?")
@@ -105,12 +105,9 @@ struct LoginView: View {
                 }
                 
 
-                
-
             }
             .padding(.top, 30)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-
             .background(
                     UnevenRoundedRectangle(
                     topLeadingRadius: 0,
@@ -122,15 +119,19 @@ struct LoginView: View {
                 .shadow(color: Color.green.opacity(0.5), radius: 10, x: 0, y: -10)
             )
             
-        } .ignoresSafeArea()
+        }
+        // .keyboard para a tela não espremer quando o teclado subir 👇
+        .ignoresSafeArea(.all, edges: .all)
+        .ignoresSafeArea(.keyboard, edges: .bottom)
+        .edgesIgnoringSafeArea(.bottom) 
+        
     }
         
     func autenticar() {
         print("Tentando logar com: \(email)")
-        // Aqui você adicionaria a lógica de Firebase ou API
     }
 }
 
 #Preview{
-    LoginView();
+    LoginView()
 }
