@@ -14,12 +14,12 @@ struct PixAreaCodeView: View {
     @State var pixKey: String = ""
     var body: some View {
         Spacer()
-        VStack {
+        VStack (spacing: 30){
             Text("Área Pix")
-                .font(Font.title2
-                    .bold())
-                .padding(.top,5)
-                
+                .font(Font.custom("helvetica", size: 28))
+                .bold()
+                .padding(.top,85)
+            
             VStack{
                 Text("Pagar com pix")
                     .bold()
@@ -28,20 +28,20 @@ struct PixAreaCodeView: View {
                     TextField("Informe a chave Pix", text: $pixKey)
                         .cornerRadius(15)
                         .frame(width: 296, height: 51)
+                        
                         .textFieldStyle(RoundedBorderTextFieldStyle())
-                    Image(systemName: "doc.on.doc")
-                        .colorInvert()
+                        
                 }
             }
             .frame(width: 342, height: 174)
-            .padding(20)
             .background(Color(red: 47/255, green: 57/255, blue: 42/255))
             .cornerRadius(15)
             
             //Spacer()
-            VStack{
-                Spacer()
+            VStack(spacing: 10){
                 Text("Outros:")
+                    .font(Font.custom("helvetica", size: 22))
+                    .bold()
                 HStack{
                     
                     Spacer()
@@ -51,7 +51,9 @@ struct PixAreaCodeView: View {
                         } label: {
                             Image(systemName: "camera")
                                 .foregroundStyle(Color.white)
-                                
+                                .font(Font.custom("helvetica", size: 32))
+                            
+                            
                         }
                         .frame(width: 119, height: 119)
                         .background(Color(red: 47/255, green: 57/255, blue: 42/255))
@@ -65,9 +67,9 @@ struct PixAreaCodeView: View {
                         Button {
                             // Action here
                         } label: {
-                            Image(systemName: "qrcode")
+                            Image("qr-code-white2")
                                 .foregroundStyle(Color.white)
-                                
+                            
                         }
                         .frame(width: 119, height: 119)
                         .background(Color(red: 47/255, green: 57/255, blue: 42/255))
@@ -76,16 +78,16 @@ struct PixAreaCodeView: View {
                         
                     }
                     Spacer()
-                }
+                }.padding(.top, 10)
                 HStack{
                     Spacer()
                     VStack{
                         Button {
                             // Action here
                         } label: {
-                            Image(systemName: "key")
+                            Image("key-chain-white3")
                                 .foregroundStyle(Color.white)
-                                
+                            
                         }
                         .frame(width: 119, height: 119)
                         .background(Color(red: 47/255, green: 57/255, blue: 42/255))
@@ -102,7 +104,8 @@ struct PixAreaCodeView: View {
                         } label: {
                             Image(systemName: "star")
                                 .foregroundStyle(Color.white)
-                                
+                                .font(Font.custom("helvetica", size: 32))
+                            
                         }
                         .frame(width: 119, height: 119)
                         .background(Color(red: 47/255, green: 57/255, blue: 42/255))
@@ -113,14 +116,13 @@ struct PixAreaCodeView: View {
                     }
                     Spacer()
                 }
-                Spacer()
-            }
-            
+            }.padding(.top, 20)
             VStack{
                 Button{
                     
                 }label: {
                     Text("Continuar")
+                        .font(Font.custom("helvetica", size: 22))
                         .bold()
                         .foregroundColor(Color.white)
                 }
@@ -130,7 +132,6 @@ struct PixAreaCodeView: View {
             }
             .frame(width: 402 , height: 115)
             .background(Color(red: 20/255, green: 18/255, blue: 16/255))
-            
             .clipShape(
                     UnevenRoundedRectangle(topLeadingRadius: 30, topTrailingRadius: 30)
                 )

@@ -9,12 +9,13 @@ import SwiftUI
 
 public struct Payment_Confirmed: View {
     public var body: some View {
-        VStack (spacing: 40){
+        VStack (spacing: 25){
+            
             Text("Pagamento confirmado")
                 .font(Font.custom("helvetica", size: 28))
                 .bold()
                 .foregroundColor(Color(red: 47/255, green: 57/255, blue: 42/255))
-                .padding(.top, 70)
+                .padding(.top, 90)
             Spacer()
             
             HStack{
@@ -25,7 +26,8 @@ public struct Payment_Confirmed: View {
             }
             .frame(width: 317, height: 41, alignment: .leading)
             
-            VStack(spacing: 13){
+            Spacer()
+            VStack(spacing: 16){
                 Text("Sobre a transação")
                     .frame(maxWidth: 317, alignment: .leading)
                     .font(Font.custom("Helvetica", size: 22))
@@ -88,13 +90,12 @@ public struct Payment_Confirmed: View {
                         Spacer()
                         Text("XXXXXXXXX")
                     }
-                }
+                }.padding(.top, 20)
                 
             }
             .frame(width: 315, height: 339)
             
             VStack{
-                Spacer()
                 Spacer()
                 Button{
                     
