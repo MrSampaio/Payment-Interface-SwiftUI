@@ -19,10 +19,10 @@ struct HomeView: View {
                 Image("user")
                     .resizable()
                     .scaledToFit()
-                    .frame(maxWidth: 60, maxHeight: 60)
+                    .frame(width: 55, height: 55)
             }
             .padding(.horizontal, 30)
-            .padding(.top, 20) // Espaço extra no topo da tela
+            .padding(.top, 20)
 
             // --- CARTÃO DE SALDO ---
             VStack(alignment: .leading, spacing: 15) { // Spacing interno do cartão
@@ -69,7 +69,7 @@ struct HomeView: View {
                                 Ellipse() // Forma oval
                                     .fill(Color.black)
                                     
-                            )
+                        )
  
                     
                     Button(action: {}){
@@ -99,7 +99,7 @@ struct HomeView: View {
                     
    
                     
-                } .padding(.top, 50)
+                } .padding(.top, 80)
                 
                 //botao pix
                 ZStack(alignment: .bottom){
@@ -108,18 +108,20 @@ struct HomeView: View {
 
                     }   .frame(maxWidth: 350, maxHeight: 30)
                         .background(
-                                Ellipse()
-                                    .fill(Color.black)
-                                    
+                            Ellipse()
+                                .fill(Color.black)
                         )
  
                     
-                    Button(action: {}){
+                    Button(action: {
+                       
+                    }){
                         HStack{
                             Text("Área Pix")
                                 .foregroundColor(Color.white)
                             
                             Image("pix")
+
                         }
                     }
    
@@ -149,7 +151,6 @@ struct HomeView: View {
                                     .fill(Color.black)
                                     
                             )
- 
                     
                     Button(action: {}){
                         HStack{
@@ -184,7 +185,6 @@ struct HomeView: View {
                         .background(
                                 Ellipse()
                                     .fill(Color.black)
-                                    
                             )
  
                     
@@ -210,69 +210,89 @@ struct HomeView: View {
                         .clipped()
                         .padding(.bottom, 10)
                 } .padding(.top, 15)
-
-                
                 
                 Spacer()
+                
+                HStack{
+                    HStack(spacing: 30) {
+                        Button(action: {}) {
+                            Image("home")
+                                .frame(width: 25, height: 25)
+                        }
+                        .frame(width: 50, height: 50)
+                        .background(.verdeClaro)
+                        .cornerRadius(100)
+                            
+
+                        Button(action: {}){
+       
+                            VStack(spacing: -10){
+                                Image("investir")
+                                    .frame(width: 38, height: 46)
+                                Text("Investir")
+                            }
+                            
+                        }
+                        
+                        Button(action: {}){
+
+                            VStack(spacing: 3){
+                                Image("compra")
+                                    .frame(width: 25, height: 25)
+                                Text("Comprar")
+                            }
+                            
+                        } .padding(.top, 9)
+                        
+                    }
+                    .frame(width: 260, height: 50)
+                    .padding(.vertical, 10)
+                    .padding(.horizontal, 30)
+                    .background(
+                        Capsule()
+                            .fill(Color.cinzaMenu)
+                    )
+                    .padding(.bottom, 40)
+                }
+                .frame(maxWidth: .infinity)
+                .frame(height: 150)
+                .background(
+                    UnevenRoundedRectangle(
+                    topLeadingRadius: 30,
+                    bottomLeadingRadius: 0,
+                    bottomTrailingRadius: 0,
+                    topTrailingRadius: 30
+                )
+                    .fill(Color.cinzaFundoBotoes)
+                )
+   
                 
             }
             
             
             .frame(maxWidth: .infinity)
+            .frame(height: 550)
             .background(
                 UnevenRoundedRectangle(
-                topLeadingRadius: 0,
+                topLeadingRadius: 30,
                 bottomLeadingRadius: 0,
                 bottomTrailingRadius: 0,
-                topTrailingRadius: 0
+                topTrailingRadius: 30
             )
             .fill(Color.cinzaCarteiraIndex)
-            .shadow(color: Color.green.opacity(0.5), radius: 10, x: 0, y: -10)
+            
+            .edgesIgnoringSafeArea(.bottom)
                 
                 
         )
-            
-            .overlay(alignment: .bottom) {
-                HStack(spacing: 40) {
-                    Button(action: {}) {
-                        Image("home")
-                        
-                    }
-                    .frame(width: 40, height: 40)
-                    .background(.verdeClaro)
-                        .cornerRadius(100)
-                        
-                    
-                    Button(action: {}) {
-   
-                        
-                        Image("investir")
-                        
-                    }
-                    
-                    Button(action: {}) {
-                        Image("compra")
-                    }
-                    
-                }
-                .padding(.vertical, 15)
-                .padding(.horizontal, 30)
-                .background(
-                    Capsule()
-                        .fill(Color.cinzaMenu)
-                )
-                .padding(.bottom, 20)
 
             }
-
-        }
 
         .edgesIgnoringSafeArea(.bottom) // Faz o fundo cinza ir até o final
     }
 }
 
 #Preview{
-
     HomeView()
 
 }

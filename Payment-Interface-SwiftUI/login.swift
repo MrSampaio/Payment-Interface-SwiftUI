@@ -122,8 +122,8 @@ struct LoginView: View {
         }
         // .keyboard para a tela não espremer quando o teclado subir 👇
         .ignoresSafeArea(.all, edges: .all)
-        .ignoresSafeArea(.keyboard, edges: .bottom)
-        .edgesIgnoringSafeArea(.bottom) 
+        .ignoresSafeArea(.keyboard)
+        .edgesIgnoringSafeArea(.bottom)
         
     }
         
