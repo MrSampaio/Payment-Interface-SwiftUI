@@ -22,7 +22,7 @@ struct HomeView: View {
                     .frame(width: 55, height: 55)
             }
             .padding(.horizontal, 30)
-            .padding(.top, 20)
+            .padding(.top, 50)
 
             // --- CARTÃO DE SALDO ---
             VStack(alignment: .leading, spacing: 15) { // Spacing interno do cartão
@@ -99,7 +99,7 @@ struct HomeView: View {
                     
    
                     
-                } .padding(.top, 80)
+                } .padding(.top, 50)
                 
                 //botao pix
                 ZStack(alignment: .bottom){
@@ -211,8 +211,6 @@ struct HomeView: View {
                         .padding(.bottom, 10)
                 } .padding(.top, 15)
                 
-                Spacer()
-                
                 HStack{
                     HStack(spacing: 30) {
                         Button(action: {}) {
@@ -247,12 +245,12 @@ struct HomeView: View {
                     }
                     .frame(width: 260, height: 50)
                     .padding(.vertical, 10)
-                    .padding(.horizontal, 30)
+                    .padding(.horizontal, 10)
                     .background(
                         Capsule()
                             .fill(Color.cinzaMenu)
                     )
-                    .padding(.bottom, 40)
+                    .padding(.bottom, 20)
                 }
                 .frame(maxWidth: .infinity)
                 .frame(height: 150)
@@ -271,7 +269,7 @@ struct HomeView: View {
             
             
             .frame(maxWidth: .infinity)
-            .frame(height: 550)
+            .frame(height: 510)
             .background(
                 UnevenRoundedRectangle(
                 topLeadingRadius: 30,
@@ -280,8 +278,6 @@ struct HomeView: View {
                 topTrailingRadius: 30
             )
             .fill(Color.cinzaCarteiraIndex)
-            
-            .edgesIgnoringSafeArea(.bottom)
                 
                 
         )
