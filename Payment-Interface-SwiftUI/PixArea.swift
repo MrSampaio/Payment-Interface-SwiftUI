@@ -128,7 +128,6 @@ struct PixAreaCodeView: View {
                 .background(Color(red: 47/255, green: 57/255, blue: 42/255))
                 .cornerRadius(15)
             }
-            
             .frame(width: 402 , height: 115)
             .background(Color(red: 20/255, green: 18/255, blue: 16/255))
             
