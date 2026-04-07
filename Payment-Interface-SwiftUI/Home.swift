@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State private var saldo = ""
+    @State private var controleViewDinheiro = true
     
     var body: some View {
         
@@ -37,16 +37,22 @@ struct HomeView: View {
                         .fontWeight(.thin)
                     
                     HStack {
-                        Text("R$ 335,05")
+                        Text(controleViewDinheiro ? "R$ 335,05" : "-")
                             .font(.custom("Helvetica", size: 36))
                             .bold()
                         
                         Spacer()
                         
-                        Button(action: {}) {
-                            Image("eye")
-                                .frame(width: 32, height: 32)
+                        Button(action: {
+                            controleViewDinheiro.toggle()
+                        }) {
+                            Image(controleViewDinheiro ? "eye" : "closed-eye")
+                                
                         }
+                        
+
+                            .frame(maxWidth: 32, maxHeight: 32)
+
                     }
                 }
             }
@@ -72,7 +78,9 @@ struct HomeView: View {
                         )
  
                     
-                    Button(action: {}){
+                    Button(action: {
+                        
+                    }){
                         HStack{
                             Text("Pagar")
                                 .foregroundColor(Color.white)
@@ -80,6 +88,8 @@ struct HomeView: View {
                             Image("barcode")
                         }
                     }
+                    
+
    
                         .foregroundColor(.white)
                         .font(.headline)
@@ -278,7 +288,6 @@ struct HomeView: View {
                 topTrailingRadius: 30
             )
             .fill(Color.cinzaCarteiraIndex)
-                
                 
         )
 
