@@ -16,7 +16,6 @@ struct ScanView: View {
     var body: some View {
         Spacer()
         VStack{
-            Spacer()
             HStack{
                 Spacer()
                 Button{

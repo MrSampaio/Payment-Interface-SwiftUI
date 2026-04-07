@@ -11,8 +11,13 @@ public struct Confirm_Payment: View {
     public var body: some View {
         VStack{
             Spacer()
-            Spacer()
-            Text("Confirmação")
+            HStack{
+                Back_Button()
+                Text("Confirmação")
+                Spacer()
+            }
+            .frame(width: 283, height: 57)
+            
                 .font(Font.custom("helvetica", size: 28))
                 .bold()
                 .foregroundColor(Color(red: 47/255, green: 57/255, blue: 42/255))
@@ -48,7 +53,6 @@ public struct Confirm_Payment: View {
                 }
                 .frame(width: 282, height: 60)
                 Spacer()
-                Spacer()
                 VStack{
                     
                     Button {
@@ -65,9 +69,9 @@ public struct Confirm_Payment: View {
                 .frame(width: 96, height: 96)
                 .background(.verdeEscuro)
                 .cornerRadius(50)
+                .padding(40)
                 Spacer()
             }
-            Spacer()
         }
     }
 }

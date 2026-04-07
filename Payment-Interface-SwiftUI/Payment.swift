@@ -10,16 +10,17 @@ import SwiftUI
 struct Payment: View {
     var body: some View {
         VStack{
-            Spacer()
-            Spacer()
-            Spacer()
-            Spacer()
-            Spacer()
-            VStack{
-                Spacer()
+            
+            VStack(spacing: 40){
+                HStack{
+                    Back_Button()
+                    Spacer()
+                }
+                    
                 Text("Conta")
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .font(Font.custom("Helvetica", size: 34))
+                    .padding(.top, 10)
                     .bold()
                     
                 VStack{
@@ -32,20 +33,18 @@ struct Payment: View {
                 }
                 
             }  .frame(maxWidth: 317, alignment: .leading)
+                .padding(10)
+                .padding(.top, 50)
             
             
-            Spacer()
-            Spacer()
-            Spacer()
             Spacer()
             VStack{
-                Spacer()
                 Text("Quem vai receber?")
                     .frame(maxWidth: 317, alignment: .leading)
                     .font(Font.custom("Helvetica", size: 22))
                     .bold()
                 
-                VStack{
+                VStack(spacing: 15){
                     HStack{
                         Text("Nome")
                             .font(Font.custom("Helvetica", size: 18))
@@ -53,6 +52,7 @@ struct Payment: View {
                         Spacer()
                         Text("Fulano")
                     }
+                    
                     HStack{
                         Text("CPF/CNPJ")
                             .font(Font.custom("Helvetica", size: 18))
@@ -75,7 +75,9 @@ struct Payment: View {
                         Text("CNPJ")
                     }
                 }.frame(width: 317, height: 164)
-            }
+                    .padding(.top, 5)
+                    
+            }.padding(30)
             VStack{
                 HStack{
                     Spacer()
@@ -87,7 +89,7 @@ struct Payment: View {
                             .bold()
                     }.frame(width: 131, height: 39)
                         .background(Color(red: 87/255, green: 115/255, blue: 86/255))
-                        .cornerRadius(15)
+                        .cornerRadius(40)
                     
                     Spacer()
                     Button{
@@ -101,15 +103,16 @@ struct Payment: View {
                 }.frame(width: 287, height: 53)
                     .foregroundStyle(Color.white)
                     .background(Color(Color(red: 47/255, green: 57/255, blue: 42/255)))
-                    .cornerRadius(15)
+                    .cornerRadius(40)
                 Spacer()
-            }
+            }.padding(.top, 20)
             
             VStack{
                 Button{
                     
                 }label: {
                     Text("Continuar")
+                        .font(Font.custom("Helvetica",  size: 22))
                         .bold()
                         .foregroundColor(Color.white)
                 }
@@ -117,7 +120,7 @@ struct Payment: View {
                 .background(Color(red: 47/255, green: 57/255, blue: 42/255))
                 .cornerRadius(15)
             }
-            .frame(width: 402 , height: 115)
+            .frame(width: 402 , height: 109.3)
             .background(Color(red: 20/255, green: 18/255, blue: 16/255))
             
             .clipShape(
@@ -125,6 +128,7 @@ struct Payment: View {
                 )
             
         }
+
         .ignoresSafeArea()
         
     }

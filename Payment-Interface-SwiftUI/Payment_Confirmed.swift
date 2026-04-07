@@ -9,13 +9,12 @@ import SwiftUI
 
 public struct Payment_Confirmed: View {
     public var body: some View {
-        VStack {
-            Spacer()
-            Spacer()
+        VStack (spacing: 40){
             Text("Pagamento confirmado")
                 .font(Font.custom("helvetica", size: 28))
                 .bold()
                 .foregroundColor(Color(red: 47/255, green: 57/255, blue: 42/255))
+                .padding(.top, 70)
             Spacer()
             
             HStack{
@@ -26,12 +25,12 @@ public struct Payment_Confirmed: View {
             }
             .frame(width: 317, height: 41, alignment: .leading)
             
-            VStack{
+            VStack(spacing: 13){
+                Text("Sobre a transação")
+                    .frame(maxWidth: 317, alignment: .leading)
+                    .font(Font.custom("Helvetica", size: 22))
+                    .bold()
                 VStack{
-                    Text("Sobre a transação")
-                        .frame(maxWidth: 317, alignment: .leading)
-                        .font(Font.custom("Helvetica", size: 22))
-                        .bold()
                     HStack{
                         Text("Data")
                             .font(Font.custom("Helvetica", size: 18))
@@ -55,11 +54,12 @@ public struct Payment_Confirmed: View {
                     }
                 }
                 Text("-----------------------------------------")
+                Text("Dados do recebedor")
+                    .frame(maxWidth: 317, alignment: .leading)
+                    .font(Font.custom("Helvetica", size: 22))
+                    .bold()
                 VStack{
-                    Text("Dados do recebedor")
-                        .frame(maxWidth: 317, alignment: .leading)
-                        .font(Font.custom("Helvetica", size: 22))
-                        .bold()
+                    
                     HStack{
                         Text("Nome")
                             .font(Font.custom("Helvetica", size: 18))
