@@ -20,6 +20,7 @@ public struct Payment_Confirmed: View {
             
             HStack{
                 Image(systemName: "checkmark.circle")
+                    .imageScale(.large)
                 Text("R$ 36,90")
                     .font(Font.custom("helvetica", size: 34))
                     .bold()

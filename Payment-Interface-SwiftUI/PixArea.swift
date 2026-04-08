@@ -13,7 +13,6 @@ import SwiftUI
 struct PixAreaCodeView: View {
     @State var pixKey: String = ""
     var body: some View {
-        Spacer()
         VStack (spacing: 30){
             Text("Área Pix")
                 .font(Font.custom("helvetica", size: 28))

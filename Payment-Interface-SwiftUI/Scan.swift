@@ -24,7 +24,7 @@ struct ScanView: View {
                     Text("PIX")
                 }.frame(width: 100, height: 29)
                 .background(Color(red: 87/255, green: 115/255, blue: 86/255))
-                    .cornerRadius(15)
+                    .cornerRadius(30)
                     
                 Spacer()
                 Button{
@@ -36,7 +36,7 @@ struct ScanView: View {
             }.frame(width: 210, height: 39)
                 .foregroundStyle(Color.white)
                 .background(Color(Color(red: 47/255, green: 57/255, blue: 42/255)))
-                .cornerRadius(15)
+                .cornerRadius(30)
             
             VStack{
                 Spacer()

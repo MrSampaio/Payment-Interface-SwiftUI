@@ -76,21 +76,7 @@ struct LoginView: View {
                 
                 Spacer()
                 
-                VStack{
-                    Button {
-                      
-                    } label: {
-                        Image("digital")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(maxWidth: .infinity, maxHeight: 50)
-                            .padding(20)
-                    }
-                    
-                }
-                .frame(width: 96, height: 96)
-                .background(.verdeEscuro) 
-                .cornerRadius(50)
+                FingerPrint()
                 
                 Spacer()
                 
