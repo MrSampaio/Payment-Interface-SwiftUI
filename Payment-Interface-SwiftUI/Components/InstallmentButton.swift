@@ -9,10 +9,11 @@ import SwiftUI
 
 public struct InstallmentButton: View {
     var text: String;
-    @State var isSelected: Bool;
+    var isSelected: Bool;
+    var action: () -> Void;
     public var body: some View {
         Button{
-            isSelected = true
+           action()
         }
         label:{
             Text(text)
@@ -26,6 +27,8 @@ public struct InstallmentButton: View {
     }
 }
 
-#Preview {
-    InstallmentButton(text: "teste", isSelected: false)
-}
+/*#Preview {
+    InstallmentButton(text: "teste", isSelected: false){
+        
+    }
+}*/
