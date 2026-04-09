@@ -118,7 +118,7 @@ struct HomeView: View {
                         }
                         .buttonStyle(PlainButtonStyle())
                         .navigationDestination(isPresented: $irParaPagar) {
-                            Payment()
+                            ScanView()
                         }
                     } .padding(.top, 50)
                     
@@ -181,7 +181,7 @@ struct HomeView: View {
                     } .padding(.top, 15)
                     
                     
-                    // --- CARTÃO CARTOES (Sem animação, para você copiar a lógica se quiser depois) ---
+                    // --- CARTÃO CARTOES
                     ZStack(alignment: .bottom){
                         HStack{ }
                             .frame(maxWidth: 350, maxHeight: 30)

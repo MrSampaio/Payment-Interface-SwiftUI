@@ -11,6 +11,10 @@ import SwiftUI
 
 
 struct PixAreaCodeView: View {
+    
+    // elimita a pagina e volta para a anterior
+    @Environment(\.dismiss) var dismiss
+    
     @State var pixKey: String = ""
     var body: some View {
         VStack (spacing: 30){
@@ -137,6 +141,7 @@ struct PixAreaCodeView: View {
             
         }
         .ignoresSafeArea()
+        .navigationBarBackButtonHidden(true)
     }
 }
 
