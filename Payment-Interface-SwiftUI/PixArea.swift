@@ -7,9 +7,6 @@
 
 import SwiftUI
 
-
-
-
 struct PixAreaCodeView: View {
     
     // elimita a pagina e volta para a anterior
@@ -18,10 +15,19 @@ struct PixAreaCodeView: View {
     @State var pixKey: String = ""
     var body: some View {
         VStack (spacing: 30){
-            Text("Área Pix")
-                .font(Font.custom("helvetica", size: 28))
-                .bold()
-                .padding(.top,85)
+            HStack(alignment: .firstTextBaseline){
+                
+                Back_Button(destino: HomeView())
+                    
+                Text("Área Pix")
+                    .font(Font.custom("helvetica", size: 28))
+                    .bold()
+                    .padding(.leading, 60)
+                   
+            } .padding(.top, 80)
+                // .padding(.leading, 40)
+                .padding(.trailing, 100)
+
             
             VStack{
                 Text("Pagar com pix")

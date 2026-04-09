@@ -11,6 +11,9 @@ struct HomeView: View {
     
     var body: some View {
         
+        // destroi a pagina anterior
+        @Environment(\.dismiss) var dismiss
+        
         NavigationStack {
             VStack(spacing: 40) {
                 
@@ -276,6 +279,7 @@ struct HomeView: View {
 
             }
             .edgesIgnoringSafeArea(.bottom)
+            .navigationBarBackButtonHidden(true)
         }
     }
 }
