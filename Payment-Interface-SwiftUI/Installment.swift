@@ -10,11 +10,11 @@ import SwiftUI
 public struct Installment: View {
 
     
-    @State var button1: some View = InstallmentButton(text: "1x R$30,00 sem juros", isSelected: true)
-    @State var button2: some View = InstallmentButton(text: "2x R$15,50 com juros", isSelected: false)
-    @State var button3: some View = InstallmentButton(text: "3x R$10,70 com juros", isSelected: false)
-    @State var button4: some View = InstallmentButton(text: "4x R$8,80 com juros", isSelected: false)
-    @State var button5: some View = InstallmentButton(text: "5x R$6,90 com juros", isSelected: false)
+    @State var button1 = InstallmentButton(text: "1x R$30,00 sem juros", isSelected: true)
+    @State var button2 = InstallmentButton(text: "2x R$15,50 com juros", isSelected: false)
+    @State var button3 = InstallmentButton(text: "3x R$10,70 com juros", isSelected: false)
+    @State var button4 = InstallmentButton(text: "4x R$8,80 com juros", isSelected: false)
+    @State var button5 = InstallmentButton(text: "5x R$6,90 com juros", isSelected: false)
 
 
     public var body: some View {
