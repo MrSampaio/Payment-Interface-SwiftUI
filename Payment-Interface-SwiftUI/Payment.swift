@@ -13,12 +13,14 @@ struct Payment: View {
     @State var aVistaColor: Color = Color(red: 87/255, green: 115/255, blue: 86/255)
     @State var ParcelarColor: Color = Color.verdeEscuro
     var body: some View {
+
+        
         ScrollView{
             VStack{
                 
                 VStack(spacing: 40){
                     HStack{
-                        Back_Button()
+                        Back_Button(destino: ScanView())
                         Spacer()
                     }
                         
@@ -163,6 +165,8 @@ struct Payment: View {
             
         }
         .ignoresSafeArea()
+        .navigationBarBackButtonHidden(true)
+
         
     }
 }

@@ -7,19 +7,25 @@
 
 import SwiftUI
 
-public struct Back_Button: View {
+public struct Back_Button<Destino: View>: View{
+    
+    var destino: Destino
+    
     public var body: some View {
-        VStack {
+        NavigationLink(destination: destino){
+            VStack {
 
-            Image(systemName: "arrow.left")
+                Image(systemName: "arrow.left")
+            }
+            .frame(width: 53, height: 53)
+            .background(Color.verdeEscuro)
+            .foregroundColor(.white)
+            .cornerRadius(30)
         }
-        .frame(width: 53, height: 53)
-        .background(Color(red: 47/255, green: 57/255, blue: 42/255))
-        .foregroundColor(.white)
-        .cornerRadius(30)
+        
         
     }
 }
 #Preview {
-    Back_Button()
+    Back_Button(destino: HomeView())
 }

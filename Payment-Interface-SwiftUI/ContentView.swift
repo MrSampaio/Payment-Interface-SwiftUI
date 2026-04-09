@@ -16,7 +16,7 @@ struct ContentView: View {
 
                 // Botão que leva para a tela de Cadastro
                 NavigationLink("Criar Conta") {
-                    ScanView() // Corrigido de SingupView para SignupView
+                    HomeView() // Corrigido de SingupView para SignupView
                 }
                 .buttonStyle(.bordered)
             }
