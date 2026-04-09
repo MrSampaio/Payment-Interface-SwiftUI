@@ -20,6 +20,7 @@ struct Payment: View {
                     VStack(spacing: 40){
                         HStack{
                             Back_Button(destino: HomeView())
+                            //teste
                             Spacer()
                         }
                             
