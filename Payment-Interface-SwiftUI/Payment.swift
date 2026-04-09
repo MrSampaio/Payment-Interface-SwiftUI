@@ -137,7 +137,7 @@ struct Payment: View {
                     if(isSelectted_Parcelar){
                         Installment()
                             .padding(.top, 28)
-                        Spacer()
+                            .padding(.bottom, 31)
                     }
                     
                 }
