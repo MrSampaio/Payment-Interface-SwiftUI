@@ -15,11 +15,13 @@ public struct Installment: View {
     @State var button3 = InstallmentButton(text: "3x R$10,70 com juros", isSelected: false)
     @State var button4 = InstallmentButton(text: "4x R$8,80 com juros", isSelected: false)
     @State var button5 = InstallmentButton(text: "5x R$6,90 com juros", isSelected: false)
+    
 
 
     public var body: some View {
         
         VStack(spacing: 10){
+            
             button1
             button2
             button3
