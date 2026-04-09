@@ -93,9 +93,9 @@ struct ScanView<LastPage: View>: View {
                 #else
                 // se for iphone fisico, exibe a camera real
                 if(optionSelected == "PIX"){
-                    SimulationCamera(optionSelected: optionSelected)
+                    RealCamera(optionSelected: optionSelected)
                 } else if(optionSelected == "CODEBAR"){
-                    SimulationCamera(optionSelected: optionSelected)
+                    RealCamera(optionSelected: optionSelected)
                 }
  
                 #endif
