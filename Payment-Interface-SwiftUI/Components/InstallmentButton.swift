@@ -9,18 +9,15 @@ import SwiftUI
 
 public struct InstallmentButton: View {
     var text: String;
-    @State var isBold: Bool;
+    @State var isSelected: Bool;
     public var body: some View {
         Button{
-            if(isBold){
-                isBold = false
-            }else{
-                isBold = true
-            }
-        }label:{
+            isSelected = true
+        }
+        label:{
             Text(text)
                 .font(.custom("helvetica", size: 20))
-                .bold(isBold)
+                .bold(isSelected)
             
         }
         .frame(width: 258, height: 49)
@@ -30,5 +27,5 @@ public struct InstallmentButton: View {
 }
 
 #Preview {
-    InstallmentButton(text: "teste", isBold: false)
+    InstallmentButton(text: "teste", isSelected: false)
 }

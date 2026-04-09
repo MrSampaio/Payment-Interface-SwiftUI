@@ -8,28 +8,23 @@
 import SwiftUI
 
 public struct Installment: View {
-    @State var isSelected_btn1: Bool = true;
-    @State var isSelected_btn2: Bool = false;
-    @State var isSelected_btn3: Bool = false;
-    @State var isSelected_btn4: Bool = false;
-    @State var isSelected_btn5: Bool = false;
+
     
-    
+    @State var button1 = InstallmentButton(text: "1x R$30,00 sem juros", isSelected: true)
+    @State var button2 = InstallmentButton(text: "2x R$15,50 com juros", isSelected: false)
+    @State var button3 = InstallmentButton(text: "3x R$10,70 com juros", isSelected: false)
+    @State var button4 = InstallmentButton(text: "4x R$8,80 com juros", isSelected: false)
+    @State var button5 = InstallmentButton(text: "5x R$6,90 com juros", isSelected: false)
+
 
     public var body: some View {
         
-        
         VStack(spacing: 10){
-            InstallmentButton(text: "1x R$30,00 sem juros", isBold: isSelected_btn1);
-
-            InstallmentButton(text: "2x R$15,50 com juros", isBold: false)
-
-            InstallmentButton(text: "3x R$10,70 com juros", isBold: false)
-
-            InstallmentButton(text: "4x R$8,80 com juros", isBold: false)
-
-            InstallmentButton(text: "5x R$6,90 com juros", isBold: false)
-
+            button1
+            button2
+            button3
+            button4
+            button5
             
         }
         
