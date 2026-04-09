@@ -121,7 +121,7 @@ struct HomeView: View {
                         }
                         .buttonStyle(PlainButtonStyle())
                         .navigationDestination(isPresented: $irParaPagar) {
-                            ScanView()
+                            ScanView(lastPage: HomeView(), optionSelected: "CODEBAR")
                         }
                     } .padding(.top, 50)
                     

@@ -55,19 +55,23 @@ struct PixAreaCodeView: View {
                     
                     Spacer()
                     VStack{
-                        Button {
-                            // Action here
-                        } label: {
-                            Image(systemName: "camera")
-                                .foregroundStyle(Color.white)
-                                .font(Font.custom("helvetica", size: 32))
-                            
-                            
+                        
+                        NavigationLink(destination: ScanView(lastPage: PixAreaCodeView(), optionSelected: "PIX")){
+                            Button {
+                               
+                            } label: {
+                                Image(systemName: "camera")
+                                    .foregroundStyle(Color.white)
+                                    .font(Font.custom("helvetica", size: 32))
+                                
+                                
+                            }
+                            .frame(width: 119, height: 119)
+                            .background(Color(red: 47/255, green: 57/255, blue: 42/255))
+                            .cornerRadius(15)
+                            Text("Scan")
                         }
-                        .frame(width: 119, height: 119)
-                        .background(Color(red: 47/255, green: 57/255, blue: 42/255))
-                        .cornerRadius(15)
-                        Text("Scan")
+
                         
                     }
                     

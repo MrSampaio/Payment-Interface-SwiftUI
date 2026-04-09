@@ -138,10 +138,6 @@ struct Payment: View {
                         Installment()
                     }
                     
-                    
-                    
-                    
-                    
                 }
                 
                 

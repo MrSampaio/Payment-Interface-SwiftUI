@@ -57,19 +57,22 @@ struct LoginView: View {
                                     .stroke(Color(.verdeClaro))
                         )
                     
-                    Button(action: {
-                        autenticar()
-                    }) {
-                        Text("Entrar")
-                            .foregroundColor(.white)
-                            .font(.custom("Helvetica", size: 22))
-                            .fontWeight(.bold)
-                            .padding()
-                            .frame(width: 300)
-                            .background(Color(red: 47/255, green: 57/255, blue: 42/255))
-                            .cornerRadius(15)
-                        
-                    } .padding(.top, 25)
+                    NavigationLink(destination: HomeView()){
+                        Button(action: {
+                          
+                        }) {
+                            Text("Entrar")
+                                .foregroundColor(.white)
+                                .font(.custom("Helvetica", size: 22))
+                                .fontWeight(.bold)
+                                .padding()
+                                .frame(width: 300)
+                                .background(Color(red: 47/255, green: 57/255, blue: 42/255))
+                                .cornerRadius(15)
+                            
+                        } .padding(.top, 25)
+                    }
+                    
                     
                     
                 }
