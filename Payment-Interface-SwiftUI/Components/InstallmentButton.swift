@@ -27,8 +27,7 @@ public struct InstallmentButton: View {
     }
 }
 
-/*#Preview {
+#Preview {
     InstallmentButton(text: "teste", isSelected: false){
-        
     }
-}*/
+}
