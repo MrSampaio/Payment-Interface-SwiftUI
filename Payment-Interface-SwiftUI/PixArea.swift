@@ -69,9 +69,10 @@ struct PixAreaCodeView: View {
                             .frame(width: 119, height: 119)
                             .background(Color(red: 47/255, green: 57/255, blue: 42/255))
                             .cornerRadius(15)
-                            Text("Scan")
+                            
                         }
-
+                        Text("Scan")
+                            .font(Font.custom("helvetica", size: 15))
                         
                     }
                     
@@ -88,6 +89,7 @@ struct PixAreaCodeView: View {
                         .background(Color(red: 47/255, green: 57/255, blue: 42/255))
                         .cornerRadius(15)
                         Text("Gerar Qr")
+                            .font(Font.custom("helvetica", size: 15))
                         
                     }
                     Spacer()
@@ -106,6 +108,7 @@ struct PixAreaCodeView: View {
                         .background(Color(red: 47/255, green: 57/255, blue: 42/255))
                         .cornerRadius(15)
                         Text("Gerar Chaves")
+                            .font(Font.custom("helvetica", size: 15))
                         
                     }
                     
@@ -125,11 +128,12 @@ struct PixAreaCodeView: View {
                         .cornerRadius(15)
                         //.shadow(radius: 5)
                         Text("Favoritos")
+                            .font(Font.custom("helvetica", size: 15))
                         
                     }
                     Spacer()
                 }
-            }.padding(.top, 20)
+            }.padding(.top, 23.7)
             VStack{
                 Button{
                     
