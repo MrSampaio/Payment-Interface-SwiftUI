@@ -1,10 +1,3 @@
-//
-//  Untitled.swift
-//  Payment-Interface-SwiftUI
-//
-//  Created by PAULO EDUARDO BARBOSA DA SILVA on 01/04/26.
-//
-
 import SwiftUI
 
 struct PixAreaCodeView: View {
@@ -34,11 +27,8 @@ struct PixAreaCodeView: View {
                     .bold()
                     .colorInvert()
                 HStack{
-                    TextField("Informe a chave Pix", text: $pixKey)
-                        .cornerRadius(15)
-                        .frame(width: 296, height: 51)
+                    PixInput(label: "Informe a chave pix", icon: "copy")
                         
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
                         
                 }
             }
@@ -129,23 +119,12 @@ struct PixAreaCodeView: View {
                         //.shadow(radius: 5)
                         Text("Favoritos")
                             .font(Font.custom("helvetica", size: 15))
-                        
                     }
                     Spacer()
                 }
             }.padding(.top, 23.7)
             VStack{
-                Button{
-                    
-                }label: {
-                    Text("Continuar")
-                        .font(Font.custom("helvetica", size: 22))
-                        .bold()
-                        .foregroundColor(Color.white)
-                }
-                .frame(width: 285, height: 51)
-                .background(Color(red: 47/255, green: 57/255, blue: 42/255))
-                .cornerRadius(15)
+                Continue_Button(destino: Payment(lastPage: PixAreaCodeView()))
             }
             .frame(width: 402 , height: 115)
             .background(Color(red: 20/255, green: 18/255, blue: 16/255))
@@ -161,5 +140,9 @@ struct PixAreaCodeView: View {
 
 
 #Preview {
-    PixAreaCodeView()
+
+    NavigationStack {
+        PixAreaCodeView()
+    }
+    
 }
