@@ -8,6 +8,18 @@
 import SwiftUI
 
 public struct Confirm_Payment: View {
+    @State var password: String = ""
+    @State var lengfht:Int = 4
+    
+    // Função para obter o caractere correto ou vazio
+       func getPinDigit(at index: Int) -> String {
+           if index < password.count {
+               let charIndex = password.index(password.startIndex, offsetBy: index)
+               return String(password[charIndex])
+           }
+           return ""
+       }
+    
     public var body: some View {
         VStack(spacing: 70){
             HStack(spacing: 5){
@@ -28,29 +40,34 @@ public struct Confirm_Payment: View {
                     .foregroundColor(Color(red: 47/255, green: 57/255, blue: 42/255))
                 
                 HStack{
-                    Rectangle()
-                        .foregroundColor(Color(red: 245/255, green: 245/255, blue: 245/255))
-                        .frame(width: 60, height: 60)
-                        .cornerRadius(15)
-                    Spacer()
-                    Rectangle()
-                        .foregroundColor(Color(red: 245/255, green: 245/255, blue: 245/255))
-                        .frame(width: 60, height: 60)
-                        .cornerRadius(15)
-                    Spacer()
-                    Rectangle()
-                        .foregroundColor(Color(red: 245/255, green: 245/255, blue: 245/255))
-                        .frame(width: 60, height: 60)
-                        .cornerRadius(15)
-                    Spacer()
-                    Rectangle()
-                        .foregroundColor(Color(red: 245/255, green: 245/255, blue: 245/255))
-                        .frame(width: 60, height: 60)
-                        .cornerRadius(15)
-                    
+                    ForEach(0..<lengfht, id: \.self){_ in
+                        Text(password)
+                            .foregroundColor(Color.black)
+                            .frame(width: 60, height: 60)
+                            .overlay(
+                            RoundedRectangle(cornerRadius: 15)
+                                .stroke(Color.verdeEscuro)
+                                
+                            )
+                        Spacer()
+                    }
+                                        
                 }
                 .frame(width: 282, height: 60)
                 .padding(.top, 40)
+                
+                // SecureField oculto que captura os números
+                SecureField("", text: $password)
+                    .keyboardType(.numberPad)
+                    //.textContentType(.oneTimeCode) // Auxilia no preenchimento automático
+                    //.opacity(0) // Torna o campo invisível, mas interativo
+                    //.frame(height: 0)
+                    .onChange(of: password) { oldValue, newValue in
+                        // Limita o número de caracteres
+                        if newValue.count > lengfht{
+                            password = String(newValue.prefix(lengfht))
+                        }
+                    }
                 
                 Spacer()
                 FingerPrint()
@@ -60,6 +77,8 @@ public struct Confirm_Payment: View {
             }
         }
     }
+    
+    
 }
 
 #Preview {
