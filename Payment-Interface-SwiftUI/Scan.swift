@@ -117,13 +117,8 @@ struct ScanView<LastPage: View>: View {
             }
             Spacer()
             VStack{
-                HStack{
-                    TextField("Informe a chave Pix", text: $pixKey)
-                        .cornerRadius(15)
-                        .frame(width: 296, height: 51)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                    Image(systemName: "play")
-                        .colorInvert()
+                NavigationLink(destination: Payment(lastPage: (optionSelected == "PIX") ? PixAreaCodeView() : HomeView())){
+                    PixInput(label: "Digite a chave Pix", icon: "input-play")
                 }
                 
             }
@@ -135,12 +130,13 @@ struct ScanView<LastPage: View>: View {
                 )
         }
         .ignoresSafeArea()
+        .navigationBarBackButtonHidden(true)
         
         .onAppear {
-            if optionSelected == "PIX" {
+            if(optionSelected) == "PIX" {
                 isPixSelected = true
                 isCodeBarSelected = false
-            } else if optionSelected == "CODEBAR" {
+            } else if(optionSelected == "CODEBAR"){
                 isPixSelected = false
                 isCodeBarSelected = true
             }
@@ -149,5 +145,8 @@ struct ScanView<LastPage: View>: View {
 }
 
 #Preview {
-    ScanView(lastPage: HomeView(), optionSelected: "PIX")
+    NavigationStack{
+        ScanView(lastPage: HomeView(), optionSelected: "PIX")
+    }
+    
 }

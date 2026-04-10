@@ -23,7 +23,7 @@ public struct Confirm_Payment: View {
     public var body: some View {
         VStack(spacing: 70){
             HStack(spacing: 5){
-                Back_Button(destino: Payment())
+                Back_Button(destino: Payment(lastPage: Confirm_Payment()))
                 
                     .padding(.trailing, 30)
                 Text("Confirmação")

@@ -12,6 +12,8 @@ struct Payment: View {
     @State var isSelectted_Parcelar: Bool = false
     @State var aVistaColor: Color = Color(red: 87/255, green: 115/255, blue: 86/255)
     @State var ParcelarColor: Color = Color.verdeEscuro
+    
+    var lastPage: any View
     var body: some View {
         VStack{
             ScrollView{
@@ -19,7 +21,7 @@ struct Payment: View {
                     
                     VStack(spacing: 40){
                         HStack{
-                            Back_Button(destino: HomeView())
+                            Back_Button(destino: PixAreaCodeView())
                             //teste
                             Spacer()
                         }
@@ -98,7 +100,7 @@ struct Payment: View {
                                 }
                                 
                             }label: {
-                                Text("Á Vista")
+                                Text("À Vista")
                                     .font(Font.custom("Helvetica",  size: 22))
                                     .bold()
                             }.frame(width: 131, height: 39)
@@ -122,10 +124,6 @@ struct Payment: View {
                             .background(ParcelarColor)
                                 .cornerRadius(40)
                             
-                            
-                            
-                            
-                            
                             Spacer()
                         }.frame(width: 287, height: 53)
                             .foregroundStyle(Color.white)
@@ -147,17 +145,7 @@ struct Payment: View {
             
             
             VStack{
-                Button{
-                    
-                }label: {
-                    Text("Continuar")
-                        .font(Font.custom("Helvetica",  size: 22))
-                        .bold()
-                        .foregroundColor(Color.white)
-                }
-                .frame(width: 285, height: 51)
-                .background(Color(red: 47/255, green: 57/255, blue: 42/255))
-                .cornerRadius(15)
+                Continue_Button(destino: Confirm_Payment())
             }
             
             .frame(width: 402 , height: 109.3)
@@ -166,12 +154,17 @@ struct Payment: View {
             .clipShape(
                     UnevenRoundedRectangle(topLeadingRadius: 30, topTrailingRadius: 30)
                 )
-        }.ignoresSafeArea()
+        }
+        .ignoresSafeArea()
+        .navigationBarBackButtonHidden(true)
         
         
     }
 }
 
 #Preview {
-    Payment()
+    NavigationStack{
+        Payment(lastPage: HomeView())
+    }
+    
 }
