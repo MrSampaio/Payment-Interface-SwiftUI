@@ -1,10 +1,11 @@
-
 import SwiftUI
 
 struct ScanView<LastPage: View>: View {
-    @State var pixSelected: Bool = true
-    @State var pixKey: String = ""
-
+    
+    @State var pixKey = ""
+    
+    @State var isPixSelected = false
+    @State var isCodeBarSelected = false
     
     var lastPage: LastPage
     var optionSelected: String
@@ -24,46 +25,60 @@ struct ScanView<LastPage: View>: View {
             HStack{
                 Back_Button(destino: lastPage)
                 
-                
                 HStack{
                     
                     Spacer()
                     
                     if(optionSelected == "PIX"){
+                        
                         Button(action: {
-                            controleSwitch.toggle()
+
+                            isPixSelected = true
+                            isCodeBarSelected = false
+                            
+                            
                         }) {
                             Text("PIX")
                         }.frame(width: 100, height: 29)
-                            .background(controleSwitch ? .verdeClaro : .verdeEscuro)
+                            .background(isPixSelected ? .verdeClaro : .verdeEscuro)
                             .cornerRadius(30)
                         Spacer()
-                        Button{
-                            
-                        }label: {
-                            Text("COD.BAR")
-                        }
+                        Button(action: {
+                            isPixSelected = false
+                            isCodeBarSelected = true
+                        }){
+                            Text("CODEBAR")
+                        } .frame(width: 100, height: 29)
+                        .background(isCodeBarSelected ? .verdeClaro : .verdeEscuro)
+                        .cornerRadius(30)
+                        
                     } else if(optionSelected == "CODEBAR"){
-                        Button{
+      
+                        Button(action: {
+
+                            isPixSelected = false
+                            isCodeBarSelected = true
                             
-                        }label: {
+                            
+                        }) {
                             Text("PIX")
                         }.frame(width: 100, height: 29)
-                            
+                            .background(isCodeBarSelected ? .verdeClaro : .verdeEscuro)
                             .cornerRadius(30)
                     
                         Spacer()
-                        Button{
-                            
-                        }label: {
-                            Text("COD.BAR")
-                        }
-                        .background(Color(red: 87/255, green: 115/255, blue: 86/255))
+                        Button(action: {
+                            isPixSelected = true
+                            isCodeBarSelected = false
+                        }){
+                            Text("CODEBAR")
+                        } .frame(width: 100, height: 29)
+                        .background(isPixSelected ? .verdeClaro : .verdeEscuro)
                         .cornerRadius(30)
                     }
 
                     Spacer()
-                }.frame(width: 210, height: 39)
+                }.frame(width: 230, height: 39)
                     .foregroundStyle(Color.white)
                     .background(Color(Color(red: 47/255, green: 57/255, blue: 42/255)))
                     .cornerRadius(30)
@@ -71,8 +86,6 @@ struct ScanView<LastPage: View>: View {
             }
             
             .padding(.trailing, 40)
-            
-
             
             VStack{
                 Spacer()
@@ -84,18 +97,18 @@ struct ScanView<LastPage: View>: View {
                 #if targetEnvironment(simulator)
                 // mostra uma câmera falsa se for simulado
                 
-                if(optionSelected == "PIX"){
-                    SimulationCamera(optionSelected: optionSelected)
-                } else if(optionSelected == "CODEBAR"){
-                    SimulationCamera(optionSelected: optionSelected)
+                if(isPixSelected){
+                    SimulationCamera(optionSelected: "PIX")
+                } else if(isCodeBarSelected){
+                    SimulationCamera(optionSelected: "CODEBAR")
                 }
 
                 #else
                 // se for iphone fisico, exibe a camera real
-                if(optionSelected == "PIX"){
-                    RealCamera(optionSelected: optionSelected)
-                } else if(optionSelected == "CODEBAR"){
-                    RealCamera(optionSelected: optionSelected)
+                if(isPixSelected){
+                    SimulationCamera(optionSelected: "PIX")
+                } else if(isCodeBarSelected){
+                    SimulationCamera(optionSelected: "CODEBAR")
                 }
  
                 #endif
@@ -122,6 +135,16 @@ struct ScanView<LastPage: View>: View {
                 )
         }
         .ignoresSafeArea()
+        
+        .onAppear {
+            if optionSelected == "PIX" {
+                isPixSelected = true
+                isCodeBarSelected = false
+            } else if optionSelected == "CODEBAR" {
+                isPixSelected = false
+                isCodeBarSelected = true
+            }
+        }
     }
 }
 

@@ -48,7 +48,7 @@ struct CameraPreviewView: UIViewControllerRepresentable {
 
 public struct RealCamera: View{
     
-    var optionSelected: String
+    @State var optionSelected: String
     
     public var body: some View {
         

@@ -8,7 +8,7 @@ import SwiftUI
 
 public struct SimulationCamera: View{
     
-    var optionSelected: String
+    @State var optionSelected: String
     
     public var body: some View {
         
