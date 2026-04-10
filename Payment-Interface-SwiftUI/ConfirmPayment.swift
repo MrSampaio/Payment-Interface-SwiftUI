@@ -10,15 +10,9 @@ import SwiftUI
 public struct Confirm_Payment: View {
     @State var password: String = ""
     @State var lengfht:Int = 4
+    @FocusState private var isFocused: Bool
     
-    // Função para obter o caractere correto ou vazio
-       func getPinDigit(at index: Int) -> String {
-           if index < password.count {
-               let charIndex = password.index(password.startIndex, offsetBy: index)
-               return String(password[charIndex])
-           }
-           return ""
-       }
+   
     
     public var body: some View {
         VStack(spacing: 70){
@@ -39,14 +33,16 @@ public struct Confirm_Payment: View {
                 Text("Digite sua senha")
                     .foregroundColor(Color(red: 47/255, green: 57/255, blue: 42/255))
                 
+                
                 HStack{
-                    ForEach(0..<lengfht, id: \.self){_ in
-                        Text(password)
+                    ForEach(0..<lengfht, id: \.self){index in
+                        Text(getPinDigit(at: index))
                             .foregroundColor(Color.black)
                             .frame(width: 60, height: 60)
+                            .cornerRadius(15)
                             .overlay(
-                            RoundedRectangle(cornerRadius: 15)
-                                .stroke(Color.verdeEscuro)
+                                RoundedRectangle(cornerRadius: 15)
+                                    .stroke(Color.verdeEscuro, lineWidth: password.count == index ? 2 : 0)
                                 
                             )
                         Spacer()
@@ -57,11 +53,15 @@ public struct Confirm_Payment: View {
                 .padding(.top, 40)
                 
                 // SecureField oculto que captura os números
-                SecureField("", text: $password)
+                TextField("", text: $password)
+                    .focused($isFocused)
                     .keyboardType(.numberPad)
-                    //.textContentType(.oneTimeCode) // Auxilia no preenchimento automático
-                    //.opacity(0) // Torna o campo invisível, mas interativo
-                    //.frame(height: 0)
+                    .textContentType(.oneTimeCode) // Auxilia no preenchimento automático
+                    
+                    //.opacity(0.03) // Torna o campo invisível, mas interativo
+                    //.hidden()
+                    .font(Font.custom("helvetica", size: 300))
+                    .frame(width: 282, height: 0)
                     .onChange(of: password) { oldValue, newValue in
                         // Limita o número de caracteres
                         if newValue.count > lengfht{
@@ -74,10 +74,19 @@ public struct Confirm_Payment: View {
                 .padding(.top, 40)
                 
                 Spacer()
+                
+                .navigationBarBackButtonHidden(true)
             }
         }
     }
-    
+    // Função para obter o caractere correto ou vazio
+       func getPinDigit(at index: Int) -> String {
+           if index < password.count {
+               let charIndex = password.index(password.startIndex, offsetBy: index)
+               return String(password[charIndex])
+           }
+           return ""
+       }
     
 }
 
