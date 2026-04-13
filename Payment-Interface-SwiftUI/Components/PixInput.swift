@@ -11,6 +11,7 @@ public struct PixInput: View {
 
         HStack {
             TextField(label, text: $pixKey)
+                .foregroundStyle(.black)
                 .textInputAutocapitalization(.never)
                 .autocorrectionDisabled()
                 
