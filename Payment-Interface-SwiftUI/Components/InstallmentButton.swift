@@ -22,7 +22,7 @@ public struct InstallmentButton: View {
             
         }
         .frame(width: 258, height: 49)
-        .background(Color.verdeClaro)
+        .background(Color.cartaoIndex02)
         .cornerRadius(15)
     }
 }

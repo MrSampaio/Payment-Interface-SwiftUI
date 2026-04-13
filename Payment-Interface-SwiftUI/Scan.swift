@@ -25,40 +25,64 @@ struct ScanView<LastPage: View>: View {
             HStack{
                 Back_Button(destino: lastPage)
                 
-                HStack {
+                HStack{
+                    
                     Spacer()
                     
-                    // Botão PIX
-                    Button(action: {
-                        isPixSelected = true
-                        isCodeBarSelected = false
-                    }) {
-                        Text("PIX")
+                    if(optionSelected == "PIX"){
+                        
+                        Button(action: {
+
+                            isPixSelected = true
+                            isCodeBarSelected = false
+                            
+                            
+                        }) {
+                            Text("PIX")
+                        }.frame(width: 100, height: 29)
+                            .background(isPixSelected ? .cartaoIndex02 : .verdeEscuro)
+                            .cornerRadius(30)
+                        Spacer()
+                        Button(action: {
+                            isPixSelected = false
+                            isCodeBarSelected = true
+                        }){
+                            Text("CODEBAR")
+                        } .frame(width: 100, height: 29)
+                        .background(isCodeBarSelected ? .cartaoIndex02 : .verdeEscuro)
+                        .cornerRadius(30)
+                        
+                    } else if(optionSelected == "CODEBAR"){
+      
+                        Button(action: {
+
+                            isPixSelected = false
+                            isCodeBarSelected = true
+                            
+                            
+                        }) {
+                            Text("PIX")
+                        }.frame(width: 100, height: 29)
+                            .background(isCodeBarSelected ? .verdeClaro : .verdeEscuro)
+                            .cornerRadius(30)
+                    
+                        Spacer()
+                        Button(action: {
+                            isPixSelected = true
+                            isCodeBarSelected = false
+                        }){
+                            Text("CODEBAR")
+                        } .frame(width: 100, height: 29)
+                        .background(isPixSelected ? .verdeClaro : .verdeEscuro)
+                        .cornerRadius(30)
                     }
-                    .frame(width: 100, height: 29)
-                    .background(isPixSelected ? Color.verdeClaro : Color.verdeEscuro)
-                    .cornerRadius(30)
-                    
+
                     Spacer()
-                    
-                    // Botão CODEBAR
-                    Button(action: {
-                        isPixSelected = false
-                        isCodeBarSelected = true
-                    }) {
-                        Text("CODEBAR")
-                    }
-                    .frame(width: 100, height: 29)
-                    .background(isCodeBarSelected ? Color.verdeClaro : Color.verdeEscuro)
+                }.frame(width: 230, height: 39)
+                    .foregroundStyle(Color.white)
+                    .background(Color(Color(red: 47/255, green: 57/255, blue: 42/255)))
                     .cornerRadius(30)
-                    
-                    Spacer()
-                }
-                .frame(width: 230, height: 39)
-                .foregroundStyle(Color.white)
-                .background(Color(red: 47/255, green: 57/255, blue: 42/255))
-                .cornerRadius(30)
-                .padding(.leading, 10)
+                    .padding(.leading, 10)
             }
             
             .padding(.trailing, 40)
@@ -99,7 +123,7 @@ struct ScanView<LastPage: View>: View {
                 
             }
             .frame(width: 402 , height: 115)
-            .background(Color(red: 20/255, green: 18/255, blue: 16/255))
+            .background(Color.cinzaFundoBotoes)
             
             .clipShape(
                     UnevenRoundedRectangle(topLeadingRadius: 30, topTrailingRadius: 30)
