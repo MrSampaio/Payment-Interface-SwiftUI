@@ -10,14 +10,13 @@ public struct PixInput: View {
     public var body: some View {
 
         HStack {
-            TextField(label, text: $pixKey)
-                .foregroundStyle(.black)
+            TextField(label, text: $pixKey, prompt: Text(label).foregroundStyle(.cinzaTexto))
                 .textInputAutocapitalization(.never)
                 .autocorrectionDisabled()
                 
             
             Image(icon)
-                .foregroundColor(.verdeEscuro)
+                
         }
         .padding(.horizontal, 15)
         .frame(width: 300, height: 50)
