@@ -8,6 +8,8 @@ struct HomeView: View {
     
     @State private var irParaPix = false
     @State private var animarPix = false
+
+    
     
     var body: some View {
         
@@ -169,6 +171,7 @@ struct HomeView: View {
                                     .fill(Color.cartaoIndex02)
                                     // Aumentamos o padding negativo para o cartão parecer "inserido"
                                     .padding(.bottom, (animarPix ? 0 : -30))
+                                    
                             )
                             .clipped() // Mantém o corte
                             .padding(.bottom, 10)

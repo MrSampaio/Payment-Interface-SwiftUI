@@ -53,12 +53,11 @@ public struct Confirm_Payment: View {
                 .padding(.top, 40)
                 
                 // SecureField oculto que captura os números
-                TextField("", text: $password)
-                    .focused($isFocused)
+                SecureField("", text: $password)
+                    //.focused($isFocused)
                     .keyboardType(.numberPad)
                     .textContentType(.oneTimeCode) // Auxilia no preenchimento automático
-                    
-                    //.opacity(0.03) // Torna o campo invisível, mas interativo
+                    .opacity(0.03) // Torna o campo invisível, mas interativo
                     //.hidden()
                     .font(Font.custom("helvetica", size: 300))
                     .frame(width: 282, height: 0)
@@ -68,6 +67,7 @@ public struct Confirm_Payment: View {
                             password = String(newValue.prefix(lengfht))
                         }
                     }
+                    .foregroundColor(.white)
                 
                 Spacer()
                 FingerPrint()

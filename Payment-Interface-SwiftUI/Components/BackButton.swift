@@ -14,7 +14,6 @@ public struct Back_Button<Destino: View>: View{
     public var body: some View {
         NavigationLink(destination: destino){
             VStack {
-
                 Image(systemName: "arrow.left")
             }
             .frame(width: 53, height: 53)
