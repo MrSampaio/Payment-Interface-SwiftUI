@@ -20,11 +20,11 @@ struct LoginView: View {
                     
                     Text("Bem-vindo(a) ao Wolf Bank, seu banco digital.")
                         .foregroundColor(.white)
-                        .font(.custom("Helvetica", size: 20))
+                        .font(.custom("Helvetica", size: 25))
                         .fontWeight(.bold)
                         .frame(width: 370)
                         .padding(.leading, 80)
-                        .padding(.bottom, 40)
+                        .padding(.bottom, 30)
                 }
                 
             }
@@ -105,7 +105,7 @@ struct LoginView: View {
                     topTrailingRadius: 0
                 )
                     .fill(Color.cinzaFundoBotoes)
-                .shadow(color: Color.green.opacity(0.5), radius: 10, x: 0, y: -10)
+                .shadow(color: Color.green.opacity(0.5), radius: 10, x: 0, y: -5)
             )
             
         }
