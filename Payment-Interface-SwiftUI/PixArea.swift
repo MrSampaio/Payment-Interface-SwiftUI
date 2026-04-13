@@ -29,8 +29,6 @@ struct PixAreaCodeView: View {
                     .colorInvert()
                 HStack{
                     PixInput(label: "Informe a chave pix", icon: "copy")
-                        
-                        
                 }
             }
             .frame(width: 342, height: 174)
@@ -49,18 +47,13 @@ struct PixAreaCodeView: View {
                     VStack{
                         
                         NavigationLink(destination: ScanView(lastPage: PixAreaCodeView(), optionSelected: "PIX")){
-                            Button {
-                               
-                            } label: {
-                                Image(systemName: "camera")
-                                    .foregroundStyle(Color.white)
-                                    .font(Font.custom("helvetica", size: 32))
-                                
-                                
-                            }
-                            .frame(width: 119, height: 119)
-                            .background(Color.verdeEscuro)
-                            .cornerRadius(15)
+                            
+                            Image(systemName: "camera")
+                                .foregroundStyle(Color.white)
+                                .font(Font.custom("helvetica", size: 32))
+                                .frame(width: 119, height: 119)
+                                .background(Color.verdeEscuro)
+                                .cornerRadius(15)
                             
                         }
                         Text("Scan")

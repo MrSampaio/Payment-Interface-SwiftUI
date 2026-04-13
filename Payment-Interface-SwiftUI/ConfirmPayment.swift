@@ -8,11 +8,10 @@ public struct Confirm_Payment: View {
     @State private var navigateToFinish = false
     
     // VARIÁVEIS PARA O EFEITO DE MÁSCARA
-    @State private var visibleIndices: Set<Int> = [] // Guarda quais índices mostram o número
+    @State private var visibleIndices: Set<Int> = []
     
     public var body: some View {
         VStack(spacing: 70) {
-            // ... Cabeçalho permanece igual ...
             HStack(spacing: 5) {
                 Back_Button(destino: HomeView())
                     .padding(.trailing, 30)
@@ -47,14 +46,14 @@ public struct Confirm_Payment: View {
                 }
                 .padding(.top, 40)
                 .overlay(
-                    // Usamos TextField em vez de SecureField para controlar a visibilidade manualmente
+                   
                     TextField("", text: $password)
                         .focused($isFocused)
                         .keyboardType(.numberPad)
                         .textContentType(.oneTimeCode)
                         .accentColor(.clear)
                         .foregroundColor(.clear)
-                        .opacity(0.01)
+                        //.opacity(0.01)
                         .onChange(of: password) { oldValue, newValue in
                             handlePasswordChange(oldValue: oldValue, newValue: newValue)
                         }
@@ -69,6 +68,8 @@ public struct Confirm_Payment: View {
             Payment_Confirmed()
         }
         .onAppear { isFocused = true }
+        
+        .navigationBarBackButtonHidden(true)
     }
 
     // LÓGICA DE MÁSCARA

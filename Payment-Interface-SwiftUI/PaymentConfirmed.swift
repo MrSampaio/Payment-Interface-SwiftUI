@@ -21,19 +21,19 @@ public struct Payment_Confirmed: View {
                         Text("R$ 36,90")
                             .font(Font.custom("helvetica", size: 45))
                             .bold()
-                        
-                        
                     }
-                    .frame(width: 317, height: 41, alignment: .leading)
+                    
+                    
+                    .frame(width: 317, alignment: .leading)
                     .padding(.bottom, 40)
                     
-                    Spacer()
-                    VStack(spacing: 16){
+
+                    VStack{
                         Text("Sobre a transação")
                             .frame(maxWidth: 317, alignment: .leading)
                             .font(Font.custom("Helvetica", size: 22))
                             .bold()
-                            .padding(.top, 20)
+                            .padding(.top, 100)
                         VStack{
                             HStack{
                                 Text("Data")
@@ -61,7 +61,6 @@ public struct Payment_Confirmed: View {
                         DottedLine()
                             .stroke(style: StrokeStyle(lineWidth: 1, dash: [1.5]))
                             .frame(height: 2)
-                            .frame(width: 1000)
                             .foregroundColor(.black)
                             .padding(.top, 16)
                             .padding(.bottom, 10)
@@ -102,7 +101,7 @@ public struct Payment_Confirmed: View {
                         DottedLine()
                             .stroke(style: StrokeStyle(lineWidth: 1, dash: [1.5]))
                             .frame(height: 2)
-                            .frame(width: 1000)
+                            
                             .foregroundColor(.black)
                             .padding(.top, 16)
                             .padding(.bottom, 10)
@@ -123,36 +122,32 @@ public struct Payment_Confirmed: View {
                                     Text("Fulano")
                                 }
                                 HStack{
-                                    Text("Data")
+                                    Text("CPF")
                                         .font(Font.custom("Helvetica", size: 18))
                                         .bold()
                                     Spacer()
-                                    Text("Segunda-feira, 23/03/2026")
+                                    Text("XXX.XXX.XXX-XX")
                                 }
                                 HStack{
-                                    Text("Horário")
+                                    Text("Instituicao")
                                         .font(Font.custom("Helvetica", size: 18))
                                         .bold()
                                     Spacer()
-                                    Text("16h45")
+                                    Text("Wolf Bank")
                                 }
-                                HStack{
-                                    Text("ID da transação")
-                                        .font(Font.custom("Helvetica", size: 18))
-                                        .bold()
-                                    Spacer()
-                                    Text("XXXXXXXXX")
-                                }
-                            }
+                                
+                            }.padding(.top, 10)
                         }
-
-                        
-                        
                     }
+                    
                     .frame(width: 315, height: 339)
+                    
+                    .frame(maxWidth: .infinity)
                     
                     
                 }  .ignoresSafeArea()
+                
+                    .scrollBounceBehavior(.basedOnSize)
                 
                 
             }
@@ -183,12 +178,10 @@ public struct Payment_Confirmed: View {
                 UnevenRoundedRectangle(topLeadingRadius: 30, topTrailingRadius: 30)
             )
             
-            
-            
-            
         }
 
         .ignoresSafeArea()
+        .navigationBarBackButtonHidden(true)
         
         
         

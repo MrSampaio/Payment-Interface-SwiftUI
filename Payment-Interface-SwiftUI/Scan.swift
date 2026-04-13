@@ -103,7 +103,7 @@ struct ScanView<LastPage: View>: View {
             
             .clipShape(
                     UnevenRoundedRectangle(topLeadingRadius: 30, topTrailingRadius: 30)
-                )
+            )
         }
         .ignoresSafeArea()
         .navigationBarBackButtonHidden(true)
