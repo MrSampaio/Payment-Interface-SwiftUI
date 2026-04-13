@@ -2,7 +2,7 @@ import SwiftUI
 
 struct LoginView: View {
     // Estados para armazenar os inputs
-    @State private var email = ""
+    @State private var cpf = ""
     @State private var password = ""
     
     var body: some View {
@@ -14,14 +14,19 @@ struct LoginView: View {
                     .frame(maxWidth: .infinity, maxHeight: 350)
                     .ignoresSafeArea()
                     .clipped()
+                VStack(spacing: 45){
+                    Image("Logo")
+                        .padding(.leading, 80)
+                    
+                    Text("Bem-vindo(a) ao Wolf Bank, seu banco digital.")
+                        .foregroundColor(.white)
+                        .font(.custom("Helvetica", size: 20))
+                        .fontWeight(.bold)
+                        .frame(width: 370)
+                        .padding(.leading, 80)
+                        .padding(.bottom, 40)
+                }
                 
-                Text("Bem-vindo(a) ao Wolf Bank, seu banco digital.")
-                    .foregroundColor(.white)
-                    .font(.custom("Helvetica", size: 25))
-                    .fontWeight(.bold)
-                    .frame(width: 370)
-                    .padding(.leading, 80)
-                    .padding(.bottom, 40)
             }
             
             VStack{
@@ -32,7 +37,7 @@ struct LoginView: View {
                     .padding(.bottom, 30)
                 
                 VStack{
-                    TextField("", text: $email, prompt: Text("Email").foregroundColor(Color(red: 141/255, green: 141/255, blue: 141/255)))
+                    TextField("", text: $cpf, prompt: Text("Digite seu CPF").foregroundColor(Color.cinzaTexto))
                         .padding()
                         .frame(width: 300)
                         .keyboardType(.emailAddress)
@@ -42,11 +47,11 @@ struct LoginView: View {
                         .foregroundColor(.white)
                         .overlay(
                                 RoundedRectangle(cornerRadius: 15)
-                                    .stroke(Color(.verdeClaro)) // Certifique-se de que essa cor existe no seus Assets!
+                                    .stroke(Color.verdeClaro)
                         )
 
                         
-                    SecureField("", text: $password, prompt: Text("Senha").foregroundColor(Color(red: 141/255, green: 141/255, blue: 141/255)))
+                    SecureField("", text: $password, prompt: Text("Digite sua senha").foregroundColor(Color.cinzaTexto))
                         .padding()
                         .frame(width: 300)
                         .foregroundColor(Color(red: 141/255, green: 141/255, blue: 141/255))
@@ -86,16 +91,17 @@ struct LoginView: View {
                 HStack{
                     Text("Ainda não possui conta?")
                         .foregroundColor(.white)
+                        .font(.custom("Helvetica", size: 15))
                         
                     Text("Cadastre-se!")
                         .foregroundColor(.verdeClaro)
                         .fontWeight(.bold)
+                        .font(.custom("Helvetica", size: 15))
 
                 }
-                
-
+                .padding(.bottom, 25)
             }
-            .padding(.top, 30)
+            .padding(.top, 18)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(
                     UnevenRoundedRectangle(
@@ -117,7 +123,7 @@ struct LoginView: View {
     }
         
     func autenticar() {
-        print("Tentando logar com: \(email)")
+        print("Tentando logar com: \(cpf)")
     }
 }
 
