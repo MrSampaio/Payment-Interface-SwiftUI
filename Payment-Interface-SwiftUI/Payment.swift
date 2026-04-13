@@ -67,8 +67,9 @@ struct Payment<LastPage: View>: View {
                                 Text("CPF/CNPJ")
                                     .font(Font.custom("Helvetica", size: 18))
                                     .bold()
+                                    .frame(width: .infinity)
                                 Spacer()
-                                Text("***.***.***-**")
+                                Text("XXX.XXX.XXX-XX")
                             }
                             HStack{
                                 Text("Instituição")
