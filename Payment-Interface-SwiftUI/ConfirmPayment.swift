@@ -36,7 +36,8 @@ public struct Confirm_Payment: View {
                             .font(.title2)
                             .bold()
                             .frame(width: 60, height: 60)
-                            .background(Color.white)
+                            .background(Color.pinInput)
+                            .foregroundStyle(Color.black)
                             .cornerRadius(15)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 15)
@@ -47,7 +48,7 @@ public struct Confirm_Payment: View {
                 .padding(.top, 40)
                 .overlay(
                    
-                    TextField("", text: $password)
+                    SecureField("", text: $password)
                         .focused($isFocused)
                         .keyboardType(.numberPad)
                         .textContentType(.oneTimeCode)
