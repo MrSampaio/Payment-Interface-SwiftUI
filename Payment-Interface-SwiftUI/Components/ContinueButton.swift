@@ -3,12 +3,13 @@ import SwiftUI
 public struct Continue_Button<Destino: View>: View {
     
     var destino: Destino
+    var texto: String
     
     public var body: some View {
         
         NavigationLink(destination: destino) {
             VStack{
-                Text("Continuar")
+                Text(texto)
                     .font(Font.custom("helvetica", size: 22))
                     .bold()
                     .foregroundColor(Color.white)
@@ -23,6 +24,6 @@ public struct Continue_Button<Destino: View>: View {
 #Preview {
     
     NavigationStack {
-        Continue_Button(destino: Text("Página Seguinte"))
+        Continue_Button(destino: Text("Página Seguinte"), texto: "Ola! Sou um botao")
     }
 }

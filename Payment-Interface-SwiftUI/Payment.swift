@@ -146,7 +146,7 @@ struct Payment<LastPage: View>: View {
             
             
             VStack{
-                Continue_Button(destino: Confirm_Payment())
+                Continue_Button(destino: Confirm_Payment(), texto: "Continuar")
             }
             
             .frame(width: 402 , height: 109.3)

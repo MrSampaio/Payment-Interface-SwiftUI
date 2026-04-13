@@ -62,29 +62,23 @@ struct LoginView: View {
                                     .stroke(Color(.verdeClaro))
                         )
                     
-                    NavigationLink(destination: HomeView()){
-                        Button(action: {
-                          
-                        }) {
-                            Text("Entrar")
-                                .foregroundColor(.white)
-                                .font(.custom("Helvetica", size: 22))
-                                .fontWeight(.bold)
-                                .padding()
-                                .frame(width: 300)
-                                .background(Color(red: 47/255, green: 57/255, blue: 42/255))
-                                .cornerRadius(15)
-                            
-                        } .padding(.top, 25)
-                    }
+                    HStack{
+                        Continue_Button(destino: HomeView(), texto: "Entrar")
+                            .foregroundColor(.white)
+                            .font(.custom("Helvetica", size: 22))
+                            .fontWeight(.bold)
+                            .frame(width: 300)
+                            .background(Color(red: 47/255, green: 57/255, blue: 42/255))
+                            .cornerRadius(15)
+                    } .padding(.top, 30)
                     
-                    
+                   
                     
                 }
                 
                 Spacer()
                 
-                FingerPrint()
+                FingerPrint(destino: HomeView())
                 
                 Spacer()
                 
@@ -128,5 +122,8 @@ struct LoginView: View {
 }
 
 #Preview{
-    LoginView()
+    NavigationStack{
+        LoginView()
+    }
+    
 }

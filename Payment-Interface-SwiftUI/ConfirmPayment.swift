@@ -61,7 +61,7 @@ public struct Confirm_Payment: View {
                 )
                 
                 Spacer()
-                FingerPrint().padding(.top, 40)
+                FingerPrint(destino: Payment_Confirmed()).padding(.top, 40)
             }
             Spacer()
         }

@@ -1,126 +1,137 @@
-//
-//  Payment_Confirmed.swift
-//  Payment-Interface-SwiftUI
-//
-//  Created by PAULO EDUARDO BARBOSA DA SILVA on 06/04/26.
-//
-
 import SwiftUI
 
 public struct Payment_Confirmed: View {
     public var body: some View {
-        VStack (spacing: 25){
-            
-            Text("Pagamento confirmado")
-                .font(Font.custom("helvetica", size: 28))
-                .bold()
-                .foregroundColor(Color(red: 47/255, green: 57/255, blue: 42/255))
-                .padding(.top, 90)
-            Spacer()
-            
-            HStack{
-                Image(systemName: "checkmark.circle")
-                    .imageScale(.large)
-                Text("R$ 36,90")
-                    .font(Font.custom("helvetica", size: 34))
-                    .bold()
-            }
-            .frame(width: 317, height: 41, alignment: .leading)
-            
-            Spacer()
-            VStack(spacing: 16){
-                Text("Sobre a transação")
-                    .frame(maxWidth: 317, alignment: .leading)
-                    .font(Font.custom("Helvetica", size: 22))
-                    .bold()
-                VStack{
-                    HStack{
-                        Text("Data")
-                            .font(Font.custom("Helvetica", size: 18))
-                            .bold()
-                        Spacer()
-                        Text("Segunda-feira, 23/03/2026")
-                    }
-                    HStack{
-                        Text("Horário")
-                            .font(Font.custom("Helvetica", size: 18))
-                            .bold()
-                        Spacer()
-                        Text("16h45")
-                    }
-                    HStack{
-                        Text("ID da transação")
-                            .font(Font.custom("Helvetica", size: 18))
-                            .bold()
-                        Spacer()
-                        Text("XXXXXXXXX")
-                    }
-                }
-                Text("-----------------------------------------")
-                Text("Dados do recebedor")
-                    .frame(maxWidth: 317, alignment: .leading)
-                    .font(Font.custom("Helvetica", size: 22))
-                    .bold()
+        VStack{
+            ScrollView(.vertical){
                 VStack{
                     
+                    Text("Pagamento confirmado")
+                        .font(Font.custom("helvetica", size: 28))
+                        .bold()
+                        .foregroundColor(Color(red: 47/255, green: 57/255, blue: 42/255))
+                        .padding(.top, 90)
+                        .padding(.bottom, 40)
+                    
+                    Spacer()
+                    
                     HStack{
-                        Text("Nome")
-                            .font(Font.custom("Helvetica", size: 18))
+                        Image(systemName: "checkmark.circle")
+                            .imageScale(.large)
+                        Text("R$ 36,90")
+                            .font(Font.custom("helvetica", size: 45))
                             .bold()
-                        Spacer()
-                        Text("Fulano")
+                        
+                        
                     }
-                    HStack{
-                        Text("Data")
-                            .font(Font.custom("Helvetica", size: 18))
+                    .frame(width: 317, height: 41, alignment: .leading)
+                    .padding(.bottom, 40)
+                    
+                    Spacer()
+                    VStack(spacing: 16){
+                        Text("Sobre a transação")
+                            .frame(maxWidth: 317, alignment: .leading)
+                            .font(Font.custom("Helvetica", size: 22))
                             .bold()
-                        Spacer()
-                        Text("Segunda-feira, 23/03/2026")
-                    }
-                    HStack{
-                        Text("Horário")
-                            .font(Font.custom("Helvetica", size: 18))
+                            .padding(.top, 20)
+                        VStack{
+                            HStack{
+                                Text("Data")
+                                    .font(Font.custom("Helvetica", size: 18))
+                                    .bold()
+                                Spacer()
+                                Text("Segunda-feira, 23/03/2026")
+                            }
+                            HStack{
+                                Text("Horário")
+                                    .font(Font.custom("Helvetica", size: 18))
+                                    .bold()
+                                Spacer()
+                                Text("16h45")
+                            }
+                            HStack{
+                                Text("ID da transação")
+                                    .font(Font.custom("Helvetica", size: 18))
+                                    .bold()
+                                Spacer()
+                                Text("XXXXXXXXX")
+                            }
+                        } .padding(.top, 10)
+                        
+
+                        
+                        HStack{
+                            
+                            Line()
+                                .stroke(style: StrokeStyle(lineWidth: 1, dash: [1.5]))
+                                .frame(height: 2)
+                                .foregroundColor(.black)
+                                .padding(.horizontal, 16)
+                        }
+                            
+                        
+                        Text("Dados do recebedor")
+                            .frame(maxWidth: 317, alignment: .leading)
+                            .font(Font.custom("Helvetica", size: 22))
                             .bold()
-                        Spacer()
-                        Text("16h45")
+                        VStack{
+                            
+                            HStack{
+                                Text("Nome")
+                                    .font(Font.custom("Helvetica", size: 18))
+                                    .bold()
+                                Spacer()
+                                Text("Fulano")
+                            }
+                            HStack{
+                                Text("Data")
+                                    .font(Font.custom("Helvetica", size: 18))
+                                    .bold()
+                                Spacer()
+                                Text("Segunda-feira, 23/03/2026")
+                            }
+                            HStack{
+                                Text("Horário")
+                                    .font(Font.custom("Helvetica", size: 18))
+                                    .bold()
+                                Spacer()
+                                Text("16h45")
+                            }
+                            HStack{
+                                Text("ID da transação")
+                                    .font(Font.custom("Helvetica", size: 18))
+                                    .bold()
+                                Spacer()
+                                Text("XXXXXXXXX")
+                            }
+                        }.padding(.top, 10)
+                        
+                        
                     }
-                    HStack{
-                        Text("ID da transação")
-                            .font(Font.custom("Helvetica", size: 18))
-                            .bold()
-                        Spacer()
-                        Text("XXXXXXXXX")
-                    }
-                }.padding(.top, 20)
+                    .frame(width: 315, height: 339)
+                    
+                    
+                }  .ignoresSafeArea()
+                
                 
             }
-            .frame(width: 315, height: 339)
+            
+            .frame(width: .infinity)
+            
+            .ignoresSafeArea(.all, edges: .all)
             
             VStack{
                 Spacer()
-                Button{
-                    
-                }label: {
-                    Text("Compartilhar")
-                        .bold()
-                        .foregroundColor(Color.white)
-                }
-                .frame(width: 285, height: 51)
-                .background(Color(red: 47/255, green: 57/255, blue: 42/255))
-                .cornerRadius(15)
+                
+                Continue_Button(destino: HomeView(), texto: "Compartilhar")
+                    .frame(width: 285, height: 51)
+                    .background(Color(red: 47/255, green: 57/255, blue: 42/255))
+                    .cornerRadius(15)
                 
                 Spacer()
                 
-                Button{
-                    
-                }label: {
-                    Text("Pagina Inicial")
-                        .bold()
-                        .foregroundColor(Color.white)
-                }
-                .frame(width: 285, height: 51)
-                .background(Color(red: 47/255, green: 57/255, blue: 42/255))
-                .cornerRadius(15)
+                Continue_Button(destino: HomeView(), texto: "Página inicial")
+                    .fontWeight(.thin)
                 Spacer()
                 Spacer()
             }
@@ -128,12 +139,19 @@ public struct Payment_Confirmed: View {
             .background(Color(red: 20/255, green: 18/255, blue: 16/255))
             
             .clipShape(
-                    UnevenRoundedRectangle(topLeadingRadius: 30, topTrailingRadius: 30)
-                )
-        }
-        .ignoresSafeArea()
+                UnevenRoundedRectangle(topLeadingRadius: 30, topTrailingRadius: 30)
+            )
+            
+            
+            
+            
+        } .ignoresSafeArea()
+        
+        
+        
     }
-}
+       
+} 
 
 #Preview {
     Payment_Confirmed()

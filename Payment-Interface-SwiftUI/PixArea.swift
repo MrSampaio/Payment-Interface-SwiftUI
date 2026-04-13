@@ -119,7 +119,7 @@ struct PixAreaCodeView: View {
                 }
             }.padding(.top, 23.7)
             VStack{
-                Continue_Button(destino: Payment(lastPage: PixAreaCodeView()))
+                Continue_Button(destino: Payment(lastPage: PixAreaCodeView()), texto: "Continuar")
             }
             .frame(width: 402 , height: 115)
             .background(Color(red: 20/255, green: 18/255, blue: 16/255))
