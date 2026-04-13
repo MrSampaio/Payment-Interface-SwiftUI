@@ -1,95 +1,120 @@
-//
-//  Confirm_Payment.swift
-//  Payment-Interface-SwiftUI
-//
-//  Created by PAULO EDUARDO BARBOSA DA SILVA on 06/04/26.
-//
-
 import SwiftUI
 
 public struct Confirm_Payment: View {
-    @State var password: String = ""
-    @State var lengfht:Int = 4
+    @State var lengfht: Int = 4
     @FocusState private var isFocused: Bool
     
-   
+    @State private var password = ""
+    @State private var navigateToFinish = false
+    
+    // VARIÁVEIS PARA O EFEITO DE MÁSCARA
+    @State private var visibleIndices: Set<Int> = [] // Guarda quais índices mostram o número
     
     public var body: some View {
-        VStack(spacing: 70){
-            HStack(spacing: 5){
-                Back_Button(destino: Payment(lastPage: Confirm_Payment()))
-                
+        VStack(spacing: 70) {
+            // ... Cabeçalho permanece igual ...
+            HStack(spacing: 5) {
+                Back_Button(destino: HomeView())
                     .padding(.trailing, 30)
                 Text("Confirmação")
                     .padding(.top, 40)
-                    .font(Font.custom("helvetica", size: 28))
+                    .font(.custom("helvetica", size: 28))
                     .bold()
                 Spacer()
             }
-                .frame(width: 317, height: 57)
-                .foregroundColor(Color(red: 47/255, green: 57/255, blue: 42/255))
+            .frame(width: 317, height: 57)
+            .foregroundColor(Color(red: 47/255, green: 57/255, blue: 42/255))
+            
             Spacer()
-            VStack{
+            
+            VStack {
                 Text("Digite sua senha")
                     .foregroundColor(Color(red: 47/255, green: 57/255, blue: 42/255))
                 
-                
-                HStack{
-                    ForEach(0..<lengfht, id: \.self){index in
+                HStack(spacing: 15) {
+                    ForEach(0..<lengfht, id: \.self) { index in
                         Text(getPinDigit(at: index))
-                            .foregroundColor(Color.black)
+                            .font(.title2)
+                            .bold()
                             .frame(width: 60, height: 60)
+                            .background(Color.white)
                             .cornerRadius(15)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 15)
-                                    .stroke(Color.verdeEscuro, lineWidth: password.count == index ? 2 : 0)
-                                
+                                    .stroke(Color.verdeEscuro, lineWidth: password.count == index ? 3 : 1)
                             )
-                        Spacer()
                     }
-                                        
                 }
-                .frame(width: 282, height: 60)
                 .padding(.top, 40)
-                
-                // SecureField oculto que captura os números
-                SecureField("", text: $password)
-                    //.focused($isFocused)
-                    .keyboardType(.numberPad)
-                    .textContentType(.oneTimeCode) // Auxilia no preenchimento automático
-                    .opacity(0.03) // Torna o campo invisível, mas interativo
-                    //.hidden()
-                    .font(Font.custom("helvetica", size: 300))
-                    .frame(width: 282, height: 0)
-                    .onChange(of: password) { oldValue, newValue in
-                        // Limita o número de caracteres
-                        if newValue.count > lengfht{
-                            password = String(newValue.prefix(lengfht))
+                .overlay(
+                    // Usamos TextField em vez de SecureField para controlar a visibilidade manualmente
+                    TextField("", text: $password)
+                        .focused($isFocused)
+                        .keyboardType(.numberPad)
+                        .textContentType(.oneTimeCode)
+                        .accentColor(.clear)
+                        .foregroundColor(.clear)
+                        .opacity(0.01)
+                        .onChange(of: password) { oldValue, newValue in
+                            handlePasswordChange(oldValue: oldValue, newValue: newValue)
                         }
-                    }
-                    .foregroundColor(.white)
+                )
                 
                 Spacer()
-                FingerPrint()
-                .padding(.top, 40)
-                
-                Spacer()
-                
-                .navigationBarBackButtonHidden(true)
+                FingerPrint().padding(.top, 40)
+            }
+            Spacer()
+        }
+        .navigationDestination(isPresented: $navigateToFinish) {
+            Payment_Confirmed()
+        }
+        .onAppear { isFocused = true }
+    }
+
+    // LÓGICA DE MÁSCARA
+    func getPinDigit(at index: Int) -> String {
+        if index < password.count {
+            if visibleIndices.contains(index) {
+                let charIndex = password.index(password.startIndex, offsetBy: index)
+                return String(password[charIndex])
+            } else {
+                return "*"
+            }
+        }
+        return ""
+    }
+
+    func handlePasswordChange(oldValue: String, newValue: String) {
+
+        if newValue.count > 4 {
+            password = String(newValue.prefix(4))
+            return
+        }
+
+        // se o usuário adicionou um caractere
+        if newValue.count > oldValue.count {
+            let lastIndex = newValue.count - 1
+            
+            // adiciona o índice atual aos visíveis
+            visibleIndices.insert(lastIndex)
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                visibleIndices.remove(lastIndex)
+            }
+        }
+
+        // navegação automática
+        if password.count == 4 {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                navigateToFinish = true
             }
         }
     }
-    // Função para obter o caractere correto ou vazio
-       func getPinDigit(at index: Int) -> String {
-           if index < password.count {
-               let charIndex = password.index(password.startIndex, offsetBy: index)
-               return String(password[charIndex])
-           }
-           return ""
-       }
-    
 }
 
 #Preview {
-    Confirm_Payment()
+    NavigationStack{
+        Confirm_Payment()
+    }
+    
 }

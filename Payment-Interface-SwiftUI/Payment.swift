@@ -7,13 +7,14 @@
 
 import SwiftUI
 
-struct Payment: View {
+struct Payment<LastPage: View>: View {
     @State var isSelectted_aVista: Bool = false
     @State var isSelectted_Parcelar: Bool = false
     @State var aVistaColor: Color = Color(red: 87/255, green: 115/255, blue: 86/255)
     @State var ParcelarColor: Color = Color.verdeEscuro
+
+    var lastPage: LastPage
     
-    var lastPage: any View
     var body: some View {
         VStack{
             ScrollView{
@@ -21,7 +22,7 @@ struct Payment: View {
                     
                     VStack(spacing: 40){
                         HStack{
-                            Back_Button(destino: PixAreaCodeView())
+                            Back_Button(destino: lastPage)
                             //teste
                             Spacer()
                         }
