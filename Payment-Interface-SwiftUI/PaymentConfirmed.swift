@@ -54,57 +54,98 @@ public struct Payment_Confirmed: View {
                                     .font(Font.custom("Helvetica", size: 18))
                                     .bold()
                                 Spacer()
-                                Text("XXXXXXXXX")
+                                Text("#AWK2345LGU2")
                             }
                         } .padding(.top, 10)
-                        
-
-                        
-                        HStack{
                             
-                            Line()
-                                .stroke(style: StrokeStyle(lineWidth: 1, dash: [1.5]))
-                                .frame(height: 2)
-                                .foregroundColor(.black)
-                                .padding(.horizontal, 16)
-                        }
-                            
+                        DottedLine()
+                            .stroke(style: StrokeStyle(lineWidth: 1, dash: [1.5]))
+                            .frame(height: 2)
+                            .frame(width: 1000)
+                            .foregroundColor(.black)
+                            .padding(.top, 16)
+                            .padding(.bottom, 10)
                         
-                        Text("Dados do recebedor")
-                            .frame(maxWidth: 317, alignment: .leading)
-                            .font(Font.custom("Helvetica", size: 22))
-                            .bold()
+                            
                         VStack{
+                            Text("Dados do recebedor")
+                                .frame(maxWidth: 317, alignment: .leading)
+                                .font(Font.custom("Helvetica", size: 22))
+                                .bold()
+                            VStack{
+                                
+                                HStack{
+                                    Text("Nome")
+                                        .font(Font.custom("Helvetica", size: 18))
+                                        .bold()
+                                    Spacer()
+                                    Text("Fulano")
+                                }
+                                HStack{
+                                    Text("CPF")
+                                        .font(Font.custom("Helvetica", size: 18))
+                                        .bold()
+                                    Spacer()
+                                    Text("XXX.XXX.XXX-XX")
+                                }
+                                HStack{
+                                    Text("Instituicao")
+                                        .font(Font.custom("Helvetica", size: 18))
+                                        .bold()
+                                    Spacer()
+                                    Text("Wolf Bank")
+                                }
+                                
+                            }.padding(.top, 10)
+                        }
+                        
+                        DottedLine()
+                            .stroke(style: StrokeStyle(lineWidth: 1, dash: [1.5]))
+                            .frame(height: 2)
+                            .frame(width: 1000)
+                            .foregroundColor(.black)
+                            .padding(.top, 16)
+                            .padding(.bottom, 10)
+                        
+                        VStack{
+                            Text("Dados do pagador")
+                                .frame(maxWidth: 320, alignment: .leading)
+                                .font(Font.custom("Helvetica", size: 22))
+                                .bold()
                             
-                            HStack{
-                                Text("Nome")
-                                    .font(Font.custom("Helvetica", size: 18))
-                                    .bold()
-                                Spacer()
-                                Text("Fulano")
+                            VStack{
+                                
+                                HStack{
+                                    Text("Nome")
+                                        .font(Font.custom("Helvetica", size: 18))
+                                        .bold()
+                                    Spacer()
+                                    Text("Fulano")
+                                }
+                                HStack{
+                                    Text("Data")
+                                        .font(Font.custom("Helvetica", size: 18))
+                                        .bold()
+                                    Spacer()
+                                    Text("Segunda-feira, 23/03/2026")
+                                }
+                                HStack{
+                                    Text("Horário")
+                                        .font(Font.custom("Helvetica", size: 18))
+                                        .bold()
+                                    Spacer()
+                                    Text("16h45")
+                                }
+                                HStack{
+                                    Text("ID da transação")
+                                        .font(Font.custom("Helvetica", size: 18))
+                                        .bold()
+                                    Spacer()
+                                    Text("XXXXXXXXX")
+                                }
                             }
-                            HStack{
-                                Text("Data")
-                                    .font(Font.custom("Helvetica", size: 18))
-                                    .bold()
-                                Spacer()
-                                Text("Segunda-feira, 23/03/2026")
-                            }
-                            HStack{
-                                Text("Horário")
-                                    .font(Font.custom("Helvetica", size: 18))
-                                    .bold()
-                                Spacer()
-                                Text("16h45")
-                            }
-                            HStack{
-                                Text("ID da transação")
-                                    .font(Font.custom("Helvetica", size: 18))
-                                    .bold()
-                                Spacer()
-                                Text("XXXXXXXXX")
-                            }
-                        }.padding(.top, 10)
+                        }
+
                         
                         
                     }
@@ -117,6 +158,8 @@ public struct Payment_Confirmed: View {
             }
             
             .frame(width: .infinity)
+            
+            
             
             .ignoresSafeArea(.all, edges: .all)
             
@@ -145,7 +188,9 @@ public struct Payment_Confirmed: View {
             
             
             
-        } .ignoresSafeArea()
+        }
+
+        .ignoresSafeArea()
         
         
         

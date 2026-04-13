@@ -6,7 +6,7 @@
 //
 import SwiftUI
 
-struct Line: Shape {
+struct DottedLine: Shape {
     func path(in rect: CGRect) -> Path {
         var path = Path()
         path.move(to: CGPoint(x: 0, y: rect.midY))
