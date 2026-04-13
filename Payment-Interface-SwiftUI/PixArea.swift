@@ -25,8 +25,8 @@ struct PixAreaCodeView: View {
             
             VStack{
                 Text("Pagar com pix")
+                    .foregroundStyle(.white)
                     .bold()
-                    .colorInvert()
                 HStack{
                     PixInput(label: "Informe a chave pix", icon: "copy")
                 }
