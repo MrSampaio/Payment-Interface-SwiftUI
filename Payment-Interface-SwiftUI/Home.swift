@@ -45,8 +45,9 @@ struct HomeView: View {
                     
                     VStack(alignment: .leading, spacing: 5) {
                         Text("Saldo total")
-                            .foregroundColor(.saldo)
+                            
                             .fontWeight(.thin)
+                            .foregroundColor(Color(.saldo))
                         
                         HStack {
                             Text(controleViewDinheiro ? "R$ 335,05" : "-")
