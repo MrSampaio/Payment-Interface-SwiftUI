@@ -1,4 +1,3 @@
-//
 //  Loading.swift
 //  Payment-Interface-SwiftUI
 //
@@ -11,10 +10,12 @@ struct Loading: View {
     var body: some View {
         VStack(spacing: 30){
             Image("Logo")
-            ProgressView("Wolf bank está processando pagamento...")
+            ProgressView()
                 .progressViewStyle(CircularProgressViewStyle(tint: Color.verdeEscuro))
+                
+            Text("Wolf Bank está processando o pagamento...")
                 .foregroundStyle(Color.cartaoIndex04)
-                .font(.custom("HelveticaNeue-Bold", size: 18))
+                .font(.custom("HelveticaNeue-Bold", size: 14))
         }
         
     }

@@ -10,7 +10,7 @@ import SwiftUI
 struct Payment: View {
     @State var isSelectted_aVista: Bool = false
     @State var isSelectted_Parcelar: Bool = false
-    @State var aVistaColor: Color = Color(red: 87/255, green: 115/255, blue: 86/255)
+    @State var aVistaColor: Color = Color.cartaoIndex02
     @State var ParcelarColor: Color = Color.verdeEscuro
     
     var lastPage: any View
@@ -96,7 +96,7 @@ struct Payment: View {
                                 
                                 if(!isSelectted_Parcelar){
                                     ParcelarColor = Color.verdeEscuro
-                                    aVistaColor = Color(red: 87/255, green: 115/255, blue: 86/255)
+                                    aVistaColor = .cartaoIndex02
                                 }
                                 
                             }label: {
@@ -112,7 +112,7 @@ struct Payment: View {
                                 isSelectted_Parcelar = true;
                                 if(isSelectted_Parcelar){
                                     isSelectted_Parcelar = true;
-                                    ParcelarColor = Color(red: 87/255, green: 115/255, blue: 86/255)
+                                    ParcelarColor = .cartaoIndex02
                                     aVistaColor = Color.verdeEscuro
                                 }
                             }label: {
@@ -127,7 +127,7 @@ struct Payment: View {
                             Spacer()
                         }.frame(width: 287, height: 53)
                             .foregroundStyle(Color.white)
-                            .background(Color(Color(red: 47/255, green: 57/255, blue: 42/255)))
+                            .background(Color.verdeEscuro)
                             .cornerRadius(40)
                         Spacer()
                     }.padding(.top, 20)
@@ -149,7 +149,7 @@ struct Payment: View {
             }
             
             .frame(width: 402 , height: 109.3)
-            .background(Color(red: 20/255, green: 18/255, blue: 16/255))
+            .background(Color.cinzaFundoBotoes)
             
             .clipShape(
                     UnevenRoundedRectangle(topLeadingRadius: 30, topTrailingRadius: 30)

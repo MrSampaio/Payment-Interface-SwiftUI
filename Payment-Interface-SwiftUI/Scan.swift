@@ -40,7 +40,7 @@ struct ScanView<LastPage: View>: View {
                         }) {
                             Text("PIX")
                         }.frame(width: 100, height: 29)
-                            .background(isPixSelected ? .verdeClaro : .verdeEscuro)
+                            .background(isPixSelected ? .cartaoIndex02 : .verdeEscuro)
                             .cornerRadius(30)
                         Spacer()
                         Button(action: {
@@ -49,7 +49,7 @@ struct ScanView<LastPage: View>: View {
                         }){
                             Text("CODEBAR")
                         } .frame(width: 100, height: 29)
-                        .background(isCodeBarSelected ? .verdeClaro : .verdeEscuro)
+                        .background(isCodeBarSelected ? .cartaoIndex02 : .verdeEscuro)
                         .cornerRadius(30)
                         
                     } else if(optionSelected == "CODEBAR"){
@@ -123,7 +123,7 @@ struct ScanView<LastPage: View>: View {
                 
             }
             .frame(width: 402 , height: 115)
-            .background(Color(red: 20/255, green: 18/255, blue: 16/255))
+            .background(Color.cinzaFundoBotoes)
             
             .clipShape(
                     UnevenRoundedRectangle(topLeadingRadius: 30, topTrailingRadius: 30)

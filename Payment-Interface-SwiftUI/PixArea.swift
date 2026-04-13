@@ -14,6 +14,7 @@ struct PixAreaCodeView: View {
                     
                 Text("Área Pix")
                     .font(Font.custom("helvetica", size: 28))
+                    .foregroundStyle(Color.verdeEscuro)
                     .bold()
                     .padding(.leading, 60)
                    
@@ -33,13 +34,14 @@ struct PixAreaCodeView: View {
                 }
             }
             .frame(width: 342, height: 174)
-            .background(Color(red: 47/255, green: 57/255, blue: 42/255))
+            .background(Color.verdeEscuro)
             .cornerRadius(15)
             
             //Spacer()
             VStack(spacing: 10){
                 Text("Outros:")
                     .font(Font.custom("helvetica", size: 22))
+                    .foregroundStyle(Color.verdeEscuro)
                     .bold()
                 HStack{
                     
@@ -57,7 +59,7 @@ struct PixAreaCodeView: View {
                                 
                             }
                             .frame(width: 119, height: 119)
-                            .background(Color(red: 47/255, green: 57/255, blue: 42/255))
+                            .background(Color.verdeEscuro)
                             .cornerRadius(15)
                             
                         }
@@ -76,7 +78,7 @@ struct PixAreaCodeView: View {
                             
                         }
                         .frame(width: 119, height: 119)
-                        .background(Color(red: 47/255, green: 57/255, blue: 42/255))
+                        .background(Color.verdeEscuro)
                         .cornerRadius(15)
                         Text("Gerar Qr")
                             .font(Font.custom("helvetica", size: 15))
@@ -95,7 +97,7 @@ struct PixAreaCodeView: View {
                             
                         }
                         .frame(width: 119, height: 119)
-                        .background(Color(red: 47/255, green: 57/255, blue: 42/255))
+                        .background(Color.verdeEscuro)
                         .cornerRadius(15)
                         Text("Gerar Chaves")
                             .font(Font.custom("helvetica", size: 15))
@@ -114,7 +116,7 @@ struct PixAreaCodeView: View {
                             
                         }
                         .frame(width: 119, height: 119)
-                        .background(Color(red: 47/255, green: 57/255, blue: 42/255))
+                        .background(Color.verdeEscuro)
                         .cornerRadius(15)
                         //.shadow(radius: 5)
                         Text("Favoritos")
@@ -127,7 +129,7 @@ struct PixAreaCodeView: View {
                 Continue_Button(destino: Payment(lastPage: PixAreaCodeView()))
             }
             .frame(width: 402 , height: 115)
-            .background(Color(red: 20/255, green: 18/255, blue: 16/255))
+            .background(Color.cinzaFundoBotoes)
             .clipShape(
                     UnevenRoundedRectangle(topLeadingRadius: 30, topTrailingRadius: 30)
                 )
