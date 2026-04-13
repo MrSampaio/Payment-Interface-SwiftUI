@@ -45,7 +45,7 @@ struct HomeView: View {
                     
                     VStack(alignment: .leading, spacing: 5) {
                         Text("Saldo total")
-                            .foregroundColor(.black)
+                            .foregroundColor(.saldo)
                             .fontWeight(.thin)
                         
                         HStack {
