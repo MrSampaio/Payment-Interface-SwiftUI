@@ -25,7 +25,6 @@ struct PixAreaCodeView: View {
             
             VStack{
                 Text("Pagar com pix")
-                    .foregroundStyle(.pagarComPix)
                     .bold()
                     .colorInvert()
                 HStack{
