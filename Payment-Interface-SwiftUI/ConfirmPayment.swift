@@ -46,7 +46,7 @@ public struct Confirm_Payment: View {
                 }
                 .padding(.top, 40)
                 .overlay(
-                   
+                    // Usamos TextField em vez de SecureField para controlar a visibilidade manualmente
                     TextField("", text: $password)
                         .focused($isFocused)
                         .keyboardType(.numberPad)
