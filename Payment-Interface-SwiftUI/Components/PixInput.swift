@@ -13,6 +13,7 @@ public struct PixInput: View {
             TextField(label, text: $pixKey)
                 .textInputAutocapitalization(.never)
                 .autocorrectionDisabled()
+                
             
             Image(icon)
                 .foregroundColor(.verdeEscuro)
