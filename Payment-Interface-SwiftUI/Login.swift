@@ -42,7 +42,7 @@ struct LoginView: View {
                         .frame(width: 300)
                         .keyboardType(.emailAddress)
                         .autocapitalization(.none)
-                        .background(Color(red: 23/255, green: 22/255, blue: 19/255))
+                        .background(Color.textfieldLogin)
                         .cornerRadius(15)
                         .foregroundColor(.white)
                         .overlay(
@@ -54,9 +54,9 @@ struct LoginView: View {
                     SecureField("", text: $password, prompt: Text("Digite sua senha").foregroundColor(Color.cinzaTexto))
                         .padding()
                         .frame(width: 300)
-                        .foregroundColor(Color(red: 141/255, green: 141/255, blue: 141/255))
+                        .foregroundColor(Color.cinzaTexto)
                         .cornerRadius(15)
-                        .background(Color(red: 23/255, green: 22/255, blue: 19/255))
+                        .background(Color.textfieldLogin)
                         .overlay(
                                 RoundedRectangle(cornerRadius: 15)
                                     .stroke(Color(.verdeClaro))
@@ -68,7 +68,7 @@ struct LoginView: View {
                             .font(.custom("Helvetica", size: 22))
                             .fontWeight(.bold)
                             .frame(width: 300)
-                            .background(Color(red: 47/255, green: 57/255, blue: 42/255))
+                            .background(Color.verdeEscuro)
                             .cornerRadius(15)
                     } .padding(.top, 30)
                     
@@ -104,7 +104,7 @@ struct LoginView: View {
                     bottomTrailingRadius: 0,
                     topTrailingRadius: 0
                 )
-                .fill(Color(red: 20/255, green: 18/255, blue: 16/255))
+                    .fill(Color.cinzaFundoBotoes)
                 .shadow(color: Color.green.opacity(0.5), radius: 10, x: 0, y: -10)
             )
             
