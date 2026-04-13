@@ -22,7 +22,6 @@ public struct Continue_Button<Destino: View>: View {
 }
 
 #Preview {
-    
     NavigationStack {
         Continue_Button(destino: Text("Página Seguinte"), texto: "Ola! Sou um botao")
     }

@@ -51,7 +51,10 @@ struct EnterPage: View {
 }
 
 #Preview {
-    EnterPage()
+    NavigationStack{
+        EnterPage()
+    }
+    
 }
 
 // LOBO GIRANDO
