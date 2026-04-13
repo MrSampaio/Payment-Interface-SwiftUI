@@ -157,8 +157,6 @@ public struct Payment_Confirmed: View {
                 
             }
             
-            .frame(width: .infinity)
-            
             
             
             .ignoresSafeArea(.all, edges: .all)

@@ -25,64 +25,40 @@ struct ScanView<LastPage: View>: View {
             HStack{
                 Back_Button(destino: lastPage)
                 
-                HStack{
-                    
+                HStack {
                     Spacer()
                     
-                    if(optionSelected == "PIX"){
-                        
-                        Button(action: {
-
-                            isPixSelected = true
-                            isCodeBarSelected = false
-                            
-                            
-                        }) {
-                            Text("PIX")
-                        }.frame(width: 100, height: 29)
-                            .background(isPixSelected ? .cartaoIndex02 : .verdeEscuro)
-                            .cornerRadius(30)
-                        Spacer()
-                        Button(action: {
-                            isPixSelected = false
-                            isCodeBarSelected = true
-                        }){
-                            Text("CODEBAR")
-                        } .frame(width: 100, height: 29)
-                        .background(isCodeBarSelected ? .cartaoIndex02 : .verdeEscuro)
-                        .cornerRadius(30)
-                        
-                    } else if(optionSelected == "CODEBAR"){
-      
-                        Button(action: {
-
-                            isPixSelected = false
-                            isCodeBarSelected = true
-                            
-                            
-                        }) {
-                            Text("PIX")
-                        }.frame(width: 100, height: 29)
-                            .background(isCodeBarSelected ? .verdeClaro : .verdeEscuro)
-                            .cornerRadius(30)
-                    
-                        Spacer()
-                        Button(action: {
-                            isPixSelected = true
-                            isCodeBarSelected = false
-                        }){
-                            Text("CODEBAR")
-                        } .frame(width: 100, height: 29)
-                        .background(isPixSelected ? .verdeClaro : .verdeEscuro)
-                        .cornerRadius(30)
+                    // Botão PIX
+                    Button(action: {
+                        isPixSelected = true
+                        isCodeBarSelected = false
+                    }) {
+                        Text("PIX")
                     }
-
-                    Spacer()
-                }.frame(width: 230, height: 39)
-                    .foregroundStyle(Color.white)
-                    .background(Color(Color(red: 47/255, green: 57/255, blue: 42/255)))
+                    .frame(width: 100, height: 29)
+                    .background(isPixSelected ? Color.verdeClaro : Color.verdeEscuro)
                     .cornerRadius(30)
-                    .padding(.leading, 10)
+                    
+                    Spacer()
+                    
+                    // Botão CODEBAR
+                    Button(action: {
+                        isPixSelected = false
+                        isCodeBarSelected = true
+                    }) {
+                        Text("CODEBAR")
+                    }
+                    .frame(width: 100, height: 29)
+                    .background(isCodeBarSelected ? Color.verdeClaro : Color.verdeEscuro)
+                    .cornerRadius(30)
+                    
+                    Spacer()
+                }
+                .frame(width: 230, height: 39)
+                .foregroundStyle(Color.white)
+                .background(Color(red: 47/255, green: 57/255, blue: 42/255))
+                .cornerRadius(30)
+                .padding(.leading, 10)
             }
             
             .padding(.trailing, 40)
