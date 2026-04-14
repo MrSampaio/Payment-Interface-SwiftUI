@@ -15,7 +15,7 @@ struct HomeView: View {
         @Environment(\.dismiss) var dismiss
         
         NavigationStack {
-            VStack(spacing: 40) {
+            VStack(spacing: 40) {//
                 
                 // --- HEADER ---
                 HStack {
