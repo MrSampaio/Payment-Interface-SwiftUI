@@ -14,7 +14,7 @@ struct PixAreaCodeView: View {
                     
                 Text("Área Pix")
                     .font(Font.custom("helvetica", size: 28))
-                    .foregroundStyle(Color.verdeEscuro)
+                    .foregroundStyle(Color.verdeTitulo)
                     .bold()
                     .padding(.leading, 60)
                    
@@ -39,7 +39,7 @@ struct PixAreaCodeView: View {
             VStack(spacing: 10){
                 Text("Outros:")
                     .font(Font.custom("helvetica", size: 22))
-                    .foregroundStyle(Color.verdeEscuro)
+                    .foregroundStyle(Color.verdeTitulo)
                     .bold()
                 HStack{
                     

@@ -9,7 +9,7 @@ public struct Payment_Confirmed: View {
                     Text("Pagamento confirmado")
                         .font(Font.custom("helvetica", size: 28))
                         .bold()
-                        .foregroundColor(Color(red: 47/255, green: 57/255, blue: 42/255))
+                        .foregroundColor(.verdeTitulo)
                         .padding(.top, 90)
                         .padding(.bottom, 40)
                     
