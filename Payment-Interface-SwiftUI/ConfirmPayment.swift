@@ -49,6 +49,7 @@ public struct Confirm_Payment: View {
                 .overlay(
                    
                     SecureField("", text: $password)
+                        .focused($isFocused)
                         .keyboardType(.numberPad)
                         .textContentType(.oneTimeCode)
                         .accentColor(.clear)
