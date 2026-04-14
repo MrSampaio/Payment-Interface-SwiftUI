@@ -10,9 +10,7 @@ struct HomeView: View {
     @State private var animarPix = false
     
     var body: some View {
-        
-        // destroi a pagina anterior
-        @Environment(\.dismiss) var dismiss
+    
         
         NavigationStack {
             VStack(spacing: 40) {//
