@@ -23,7 +23,7 @@ struct EnterPage: View {
                             .rotationEffect(.degrees(rotationDegrees)) // Animação de Giro
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(Color.white) // Cor de fundo da splash
+                
                     
                     // DEFINE A TRANSIÇÃO DE ENTRADA PELA ESQUERDA
                     .transition(.move(edge: .top))

@@ -119,7 +119,7 @@ public struct Payment_Confirmed: View {
                                         .font(Font.custom("Helvetica", size: 18))
                                         .bold()
                                     Spacer()
-                                    Text("Fulano")
+                                    Text("Ciclano")
                                 }
                                 HStack{
                                     Text("CPF")

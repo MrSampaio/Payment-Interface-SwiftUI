@@ -61,12 +61,12 @@ public struct Confirm_Payment: View {
                 )
                 
                 Spacer()
-                FingerPrint(destino: Payment_Confirmed()).padding(.top, 40)
+                FingerPrint(destino: Loading()).padding(.top, 40)
             }
             Spacer()
         }
         .navigationDestination(isPresented: $navigateToFinish) {
-            Payment_Confirmed()
+            Loading()
         }
         .onAppear { isFocused = true }
         
@@ -89,7 +89,7 @@ public struct Confirm_Payment: View {
     func handlePasswordChange(oldValue: String, newValue: String) {
 
         if newValue.count > 4 {
-            password = String(newValue.prefix(4))
+            password = String(newValue.prefix(4)) 
             return
         }
 
@@ -100,7 +100,7 @@ public struct Confirm_Payment: View {
             // adiciona o índice atual aos visíveis
             visibleIndices.insert(lastIndex)
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 visibleIndices.remove(lastIndex)
             }
         }
