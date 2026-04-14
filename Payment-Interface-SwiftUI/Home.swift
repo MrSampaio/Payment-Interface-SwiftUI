@@ -8,8 +8,6 @@ struct HomeView: View {
     
     @State private var irParaPix = false
     @State private var animarPix = false
-
-    
     
     var body: some View {
         
