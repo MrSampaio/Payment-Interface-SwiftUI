@@ -41,7 +41,7 @@ public struct Confirm_Payment: View {
                             .cornerRadius(15)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 15)
-                                    .stroke(Color.verdeEscuro, lineWidth: password.count == index ? 3 : 1)
+                                    .stroke(Color.verdeClaro, lineWidth: password.count == index ? 3 : 1)
                             )
                     }
                 }

@@ -26,10 +26,13 @@ struct HomeView: View {
                     
                     Spacer()
                     
-                    Image("user")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 55, height: 55)
+                    NavigationLink(destination: LoginView()){
+                        Image("user")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 55, height: 55)
+                    }
+                    
                 }
                 .padding(.horizontal, 30)
                 .padding(.top, 50)

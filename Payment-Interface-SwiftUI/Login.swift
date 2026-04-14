@@ -117,6 +117,8 @@ struct LoginView: View {
             .ignoresSafeArea(.all, edges: .all)
             .ignoresSafeArea(.keyboard)
             .edgesIgnoringSafeArea(.bottom)
+            
+            .navigationBarBackButtonHidden(true)
 
         }
         

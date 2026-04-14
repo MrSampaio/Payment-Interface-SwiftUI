@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		F05F29972F7DA9F300AD19D8 /* Payment-Interface-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Payment-Interface-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F05F29972F7DA9F300AD19D8 /* Wolf Bank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wolf Bank.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -40,7 +40,7 @@
 		F05F29982F7DA9F300AD19D8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F05F29972F7DA9F300AD19D8 /* Payment-Interface-SwiftUI.app */,
+				F05F29972F7DA9F300AD19D8 /* Wolf Bank.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,9 +48,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F05F29962F7DA9F300AD19D8 /* Payment-Interface-SwiftUI */ = {
+		F05F29962F7DA9F300AD19D8 /* Wolf Bank */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F05F29A22F7DA9F400AD19D8 /* Build configuration list for PBXNativeTarget "Payment-Interface-SwiftUI" */;
+			buildConfigurationList = F05F29A22F7DA9F400AD19D8 /* Build configuration list for PBXNativeTarget "Wolf Bank" */;
 			buildPhases = (
 				F05F29932F7DA9F300AD19D8 /* Sources */,
 				F05F29942F7DA9F300AD19D8 /* Frameworks */,
@@ -63,11 +63,11 @@
 			fileSystemSynchronizedGroups = (
 				F05F29992F7DA9F300AD19D8 /* Payment-Interface-SwiftUI */,
 			);
-			name = "Payment-Interface-SwiftUI";
+			name = "Wolf Bank";
 			packageProductDependencies = (
 			);
 			productName = "Payment-Interface-SwiftUI";
-			productReference = F05F29972F7DA9F300AD19D8 /* Payment-Interface-SwiftUI.app */;
+			productReference = F05F29972F7DA9F300AD19D8 /* Wolf Bank.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -85,7 +85,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F05F29922F7DA9F300AD19D8 /* Build configuration list for PBXProject "Payment-Interface-SwiftUI" */;
+			buildConfigurationList = F05F29922F7DA9F300AD19D8 /* Build configuration list for PBXProject "Wolf Bank" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -99,7 +99,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F05F29962F7DA9F300AD19D8 /* Payment-Interface-SwiftUI */,
+				F05F29962F7DA9F300AD19D8 /* Wolf Bank */,
 			);
 		};
 /* End PBXProject section */
@@ -313,7 +313,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F05F29922F7DA9F300AD19D8 /* Build configuration list for PBXProject "Payment-Interface-SwiftUI" */ = {
+		F05F29922F7DA9F300AD19D8 /* Build configuration list for PBXProject "Wolf Bank" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F05F29A02F7DA9F400AD19D8 /* Debug */,
@@ -322,7 +322,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F05F29A22F7DA9F400AD19D8 /* Build configuration list for PBXNativeTarget "Payment-Interface-SwiftUI" */ = {
+		F05F29A22F7DA9F400AD19D8 /* Build configuration list for PBXNativeTarget "Wolf Bank" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F05F29A32F7DA9F400AD19D8 /* Debug */,
