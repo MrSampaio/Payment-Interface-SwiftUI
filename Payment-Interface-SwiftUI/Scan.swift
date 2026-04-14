@@ -13,7 +13,6 @@ struct ScanView<LastPage: View>: View {
     
     @State private var controleSwitch = true
     
-
     // elimita a pagina e volta para a anterior
     @Environment(\.dismiss) var dismiss
     
@@ -30,8 +29,10 @@ struct ScanView<LastPage: View>: View {
                     
                     // Botão PIX
                     Button(action: {
-                        isPixSelected = true
-                        isCodeBarSelected = false
+                        withAnimation(.easeInOut(duration: 0.3)) {
+                                isPixSelected = true
+                                isCodeBarSelected = false
+                            }
                     }) {
                         Text("PIX")
                     }
@@ -43,8 +44,10 @@ struct ScanView<LastPage: View>: View {
                     
                     // Botão CODEBAR
                     Button(action: {
-                        isPixSelected = false
-                        isCodeBarSelected = true
+                        withAnimation(.easeInOut(duration: 0.3)) {
+                                isPixSelected = false
+                                isCodeBarSelected = true
+                            }
                     }) {
                         Text("CODEBAR")
                     }
@@ -71,22 +74,21 @@ struct ScanView<LastPage: View>: View {
                     .foregroundColor(Color(red: 47/255, green: 57/255, blue: 42/255))
                 
                 #if targetEnvironment(simulator)
-                // mostra uma câmera falsa se for simulado
-                
-                if(isPixSelected){
+                if isPixSelected {
                     SimulationCamera(optionSelected: "PIX")
-                } else if(isCodeBarSelected){
+                        .transition(.opacity.combined(with: .scale(scale: 0.95)))
+                } else if isCodeBarSelected {
                     SimulationCamera(optionSelected: "CODEBAR")
+                        .transition(.opacity.combined(with: .scale(scale: 0.95)))
                 }
-
                 #else
-                // se for iphone fisico, exibe a camera real
-                if(isPixSelected){
+                if isPixSelected {
                     RealCamera(optionSelected: "PIX")
-                } else if(isCodeBarSelected){
+                        .transition(.opacity.combined(with: .scale(scale: 0.95)))
+                } else if isCodeBarSelected {
                     RealCamera(optionSelected: "CODEBAR")
+                        .transition(.opacity.combined(with: .scale(scale: 0.95)))
                 }
- 
                 #endif
                 
                 Spacer()
@@ -102,7 +104,7 @@ struct ScanView<LastPage: View>: View {
             .background(Color.cinzaFundoBotoes)
             
             .clipShape(
-                    UnevenRoundedRectangle(topLeadingRadius: 30, topTrailingRadius: 30)
+                UnevenRoundedRectangle(topLeadingRadius: 30, topTrailingRadius: 30)
             )
         }
         .ignoresSafeArea()

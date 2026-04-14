@@ -11,8 +11,10 @@ public struct PixInput: View {
 
         HStack {
             TextField(label, text: $pixKey, prompt: Text(label).foregroundStyle(.cinzaTexto))
-                .textInputAutocapitalization(.never)
+                .multilineTextAlignment(.leading) // Força o início à esquerda
+                .keyboardType(.numbersAndPunctuation)
                 .autocorrectionDisabled()
+                .textInputAutocapitalization(.never)
                 
             
             Image(icon)
