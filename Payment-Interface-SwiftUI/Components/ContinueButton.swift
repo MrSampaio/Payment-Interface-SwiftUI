@@ -15,7 +15,7 @@ public struct Continue_Button<Destino: View>: View {
                     .foregroundColor(Color.white)
             }
             .frame(width: 285, height: 50)
-            .background(Color(red: 47/255, green: 57/255, blue: 42/255))
+            .background(Color.verdeEscuro)
             .cornerRadius(15)
         }
     }

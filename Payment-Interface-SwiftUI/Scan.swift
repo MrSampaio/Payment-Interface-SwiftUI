@@ -59,7 +59,7 @@ struct ScanView<LastPage: View>: View {
                 }
                 .frame(width: 230, height: 39)
                 .foregroundStyle(Color.white)
-                .background(Color(red: 47/255, green: 57/255, blue: 42/255))
+                .background(Color.verdeEscuro)
                 .cornerRadius(30)
                 .padding(.leading, 10)
             }

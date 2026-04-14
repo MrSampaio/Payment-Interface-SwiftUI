@@ -161,7 +161,6 @@ public struct Payment_Confirmed: View {
                 
                 Continue_Button(destino: HomeView(), texto: "Compartilhar")
                     .frame(width: 285, height: 51)
-                    .background(Color(red: 47/255, green: 57/255, blue: 42/255))
                     .cornerRadius(15)
                 
                 Spacer()
@@ -172,7 +171,7 @@ public struct Payment_Confirmed: View {
                 Spacer()
             }
             .frame(width: 402 , height: 269)
-            .background(Color(red: 20/255, green: 18/255, blue: 16/255))
+            .background(Color.cinzaFundoBotoes)
             
             .clipShape(
                 UnevenRoundedRectangle(topLeadingRadius: 30, topTrailingRadius: 30)
