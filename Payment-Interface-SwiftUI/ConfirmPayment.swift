@@ -22,13 +22,13 @@ public struct Confirm_Payment: View {
                 Spacer()
             }
             .frame(width: 317, height: 57)
-            .foregroundColor(Color(red: 47/255, green: 57/255, blue: 42/255))
+            .foregroundColor(Color.verdeTitulo)
             
             Spacer()
             
             VStack {
                 Text("Digite sua senha")
-                    .foregroundColor(Color(red: 47/255, green: 57/255, blue: 42/255))
+                    .foregroundColor(Color.verdeTitulo)
                 
                 HStack(spacing: 15) {
                     ForEach(0..<lengfht, id: \.self) { index in

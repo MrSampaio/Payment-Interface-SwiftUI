@@ -71,7 +71,7 @@ struct ScanView<LastPage: View>: View {
                 Text("Escanear Qr Code")
                     .bold()
                     .font(Font.custom("helvetica", size: 22))
-                    .foregroundColor(Color(red: 47/255, green: 57/255, blue: 42/255))
+                    .foregroundColor(Color.verdeTitulo)
                 
                 #if targetEnvironment(simulator)
                 if isPixSelected {
