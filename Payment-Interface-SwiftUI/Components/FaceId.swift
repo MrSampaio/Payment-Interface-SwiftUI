@@ -1,5 +1,5 @@
 //
-//  FingerPrint.swift
+//  FaceId.swift
 //  Payment-Interface-SwiftUI
 //
 //  Created by PAULO EDUARDO BARBOSA DA SILVA on 08/04/26.
@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-public struct FingerPrint<Destino: View>: View {
+public struct FaceId<Destino: View>: View {
 
     var destino: Destino
     
     public var body: some View {
         NavigationLink(destination: destino) {
             VStack{
-                Image("digital")
+                Image(systemName: "faceid")
                     .resizable()
                     .scaledToFit()
                     .frame(maxWidth: .infinity, maxHeight: 50)
@@ -31,7 +31,7 @@ public struct FingerPrint<Destino: View>: View {
 
 #Preview {
     NavigationStack{
-        FingerPrint(destino: HomeView())
+        FaceId(destino: HomeView())
     }
    
 }
