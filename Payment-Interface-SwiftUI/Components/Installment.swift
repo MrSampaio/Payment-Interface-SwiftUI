@@ -29,7 +29,6 @@ public struct Installment: View {
             VStack(spacing: 10){
                 
                 ForEach(opcoes, id: \.self) { opcao in
-                    
                     InstallmentButton(text: opcao, isSelected: opcao == selecionado){
                         selecionado = opcao
                     }

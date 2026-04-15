@@ -1,4 +1,5 @@
 import SwiftUI
+import AVFoundation
 
 struct EnterPage: View {
     @State private var isActive = false
@@ -6,6 +7,8 @@ struct EnterPage: View {
     
     // Variável para controlar quando a Splash aparece para disparar a transição
     @State private var isShowingSplash = false
+    
+    @State var audioPlayer: AVAudioPlayer?
 
     var body: some View {
         ZStack {
@@ -30,6 +33,7 @@ struct EnterPage: View {
                     
                     .onAppear {
 
+                        playSound(sound: "uivo", type: "mp3")
                         
                         // 3. AGUARDA 3 SEGUNDOS E TROCA PARA A TELA DE LOGIN
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
@@ -48,6 +52,17 @@ struct EnterPage: View {
             }
         }
     }
+    
+    func playSound(sound: String, type: String) {
+            if let path = Bundle.main.path(forResource: sound, ofType: type) {
+                do {
+                    audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+                    audioPlayer?.play()
+                } catch {
+                    print("ERRO: Não foi possível tocar o som.")
+                }
+            }
+        }
 }
 
 #Preview {
