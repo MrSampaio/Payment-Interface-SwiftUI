@@ -135,7 +135,6 @@ struct Payment<LastPage: View>: View {
                     
                 }
                 
-                
             }
             
             

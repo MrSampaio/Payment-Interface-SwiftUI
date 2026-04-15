@@ -33,7 +33,7 @@ struct EnterPage: View {
                     
                     .onAppear {
 
-                        playSound(sound: "uivo", type: "mp3")
+                        //playSound(sound: "uivo", type: "mp3")
                         
                         // 3. AGUARDA 3 SEGUNDOS E TROCA PARA A TELA DE LOGIN
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
