@@ -81,7 +81,7 @@ struct LoginView: View {
                     
                     Spacer()
                     
-                    FingerPrint(destino: HomeView())
+                    FaceId(destino: HomeView())
                     
                     Spacer()
                     
